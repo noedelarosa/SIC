@@ -1,0 +1,348 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SIC" 
+             xmlns:EntradasRapidas="clr-namespace:SIC.Objs.Controles" 
+             xmlns:Comun="clr-namespace:Empresa.Comun" xmlns:Controles="clr-namespace:SIC.Objs.Controles"
+             xmlns:paginas="clr-namespace:Contrato.objects.paginas"
+             xmlns:Comun1="clr-namespace:Empresa.Comun;assembly=Empresa.Comun"
+             x:Class="SIC.us_mantenimiento_procesos" 
+	         x:Name="us_mantenimiento_procesos_control" 
+             HorizontalAlignment="Stretch" 
+             VerticalAlignment="Stretch" 
+             xml:lang="es-DO" 
+             FontSize="16" 
+             Foreground="White" 
+             mc:Ignorable="d" 
+             FontFamily="Calibri">
+
+    <UserControl.Resources>
+        <Comun1:Porciento4ColoresConvert x:Key="Porciento4ColoresConvert"/>
+        <Comun1:ConvertNegacionBool x:Key="ConvertNegacionBool"/>
+
+
+      
+
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+
+        <Grid Margin="0">
+            <Border BorderThickness="1">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Canvas Height="32.666" Margin="0,-1,-1,0" VerticalAlignment="Top" Background="#74747474">
+                    <Image Height="32" Source="/SIC;component/Objs/Comun/imgs/track_changes_32.png" Stretch="Fill" Canvas.Top="-0.001" Width="32" Canvas.Left="2.001"/>
+                    <TextBlock HorizontalAlignment="Left" Text="Formulario de Pensión por Discapacidad" VerticalAlignment="Top" Width="272" Canvas.Left="39" Canvas.Top="6" Foreground="White" FontWeight="Bold"/>
+                </Canvas>
+            </Border>
+
+            <TabControl x:Name="Tab_Docente" Margin="5,60,5,5" FontFamily="Calibri" SelectedIndex="1" Background="#FFF0F0F0">
+                <TabItem x:Name="Tabi_Docente" Header="Solicitante" >
+                    <Grid IsEnabled="{Binding Solicitud.EsSoloLectura, Converter={StaticResource ConvertNegacionBool},ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}">
+                        <ScrollViewer Margin="0" Style="{DynamicResource SimpleScrollViewer}">
+                            <Grid ScrollViewer.CanContentScroll="True" SelectiveScrollingGrid.SelectiveScrollingOrientation="Both" ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                                <Grid x:Name="Solicitante" Margin="10,10,10,250">
+                                    <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" d:IsLocked="True">
+                                        <TextBlock HorizontalAlignment="Left" Text="Solicitante" VerticalAlignment="Top" Width="79" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                        <Image Height="27" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/administrator_32.png"/>
+                                    </Canvas>
+                                    <Border x:Name="border_Copy4"  BorderThickness="1" d:IsLocked="True" >
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                <GradientStop Color="#30FFFFFF"/>
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                    </Border>
+                                    <Grid Margin="3,40,3,0">
+                                        <!--<Controles:us_contactos x:Name="usc_contactosolicitante" Margin="10,325,10,0" VerticalAlignment="Top"/>-->
+                                        <paginas:ERBuscarPersona x:Name="usc_buscarPersona" HorizontalAlignment="Left" Height="23" Margin="96,21,0,0" FinBusqueda="usc_buscarPersona_FinBusqueda_1" Limpiando="usc_buscarPersona_Limpiando_1" VerticalAlignment="Top" Width="195" SeleccionItem="usc_buscarPersona_SeleccionItem"/>
+                                        <TextBlock HorizontalAlignment="Left" Height="25" Margin="10,21.47,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="81"/>
+                                        <Grid HorizontalAlignment="Left" Height="31" Margin="96,80.47,0,0" VerticalAlignment="Top" Width="496">
+                                            <Border BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="0">
+                                                <ComboBox DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding Solicitud.Solicitante.Tipo.Id,ElementName=us_mantenimiento_procesos_control}" SelectedItem="{Binding Solicitud.Solicitante.Tipo, UpdateSourceTrigger=PropertyChanged,ElementName=us_mantenimiento_procesos_control}"  Margin="0,0,257,0" x:Name="com_relacion" />
+                                            </Border>
+                                            <TextBox x:Name="Txt_RelacionOtros" HorizontalAlignment="Left" Text="{Binding Solicitud.Solicitante.Otros, UpdateSourceTrigger=PropertyChanged,ElementName=us_mantenimiento_procesos_control}" Height="31" Margin="244,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" MaxLength="49" MaxLines="1"/>
+                                        </Grid>
+                                        <TextBlock HorizontalAlignment="Left" Height="25" Margin="10,86.47,0,0" TextWrapping="Wrap" Text="Relación" VerticalAlignment="Top" Width="81"/>
+                                        <TextBlock HorizontalAlignment="Left" Height="18.53" Margin="10,51.47,0,0" TextWrapping="Wrap" Text="Nombres" VerticalAlignment="Top" Width="81"/>
+                                        <TextBlock HorizontalAlignment="Left" x:Name="Txt_NombreSol" Height="19" Margin="96,51,0,0" TextWrapping="Wrap" Text="n/n" VerticalAlignment="Top" Width="496"/>
+                                        <StackPanel Margin="0,140,0,0">
+                                            <Grid x:Name="Direccion_Solicitante" IsEnabled="False" Margin="0">
+                                                <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" d:IsLocked="True">
+                                                    <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Dirección" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                                    <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/mail_down_32.png"/>
+                                                </Canvas>
+                                                <Border x:Name="border_Copy7"  BorderThickness="1" d:IsLocked="True" >
+                                                    <Border.BorderBrush>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                            <GradientStop Color="#30FFFFFF"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.BorderBrush>
+                                                </Border>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,55,0,0" TextWrapping="Wrap" Text="Provincia:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,55,0,0" TextWrapping="Wrap" Text="{Binding Solicitud.Solicitante.DireccionAsignada.Provincia.Nombre, ElementName=us_mantenimiento_procesos_control}" VerticalAlignment="Top" Width="489"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,78,0,0" TextWrapping="Wrap" Text="Municipio:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,78,0,0" TextWrapping="Wrap" Text="{Binding Solicitud.Solicitante.DireccionAsignada.Municipio.Nombre, ElementName=us_mantenimiento_procesos_control}" VerticalAlignment="Top" Width="489"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,101,0,0" TextWrapping="Wrap" Text="Sector:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,101,0,0" TextWrapping="Wrap" Text="{Binding Solicitud.Solicitante.DireccionAsignada.Sector.Nombre, ElementName=us_mantenimiento_procesos_control}" VerticalAlignment="Top" Width="489"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,138,0,0" TextWrapping="Wrap" Text="Referencias:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                                                <TextBlock HorizontalAlignment="Left" Height="64" Margin="99,138,0,5" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Solicitud.Solicitante.DireccionAsignada.Referencia, ElementName=us_mantenimiento_procesos_control}" Width="489"/>
+                                                <Button x:Name="But_DireccionSolicitante" Content="" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Width="18" Height="18" ToolTip="Agregar o Editar Dirección " Click="But_DireccionSolicitante_Click">
+                                                    <Button.Background>
+                                                        <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/pen_16.png"/>
+                                                    </Button.Background>
+                                                </Button>
+                                            </Grid>
+                                            <Grid x:Name="Contactos_Solicitante" IsEnabled="False" Margin="0,5" VerticalAlignment="Bottom">
+                                                <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                                                    <TextBlock HorizontalAlignment="Left" ToolTip="Contactos del docente" Text="Contactos" VerticalAlignment="Top" Width="65" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                                    <Image Height="27" ToolTip="Contactos del docente" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/telephone_32.png"/>
+                                                </Canvas>
+                                                <Border x:Name="border_Copy6"  BorderThickness="1" Margin="0" >
+                                                    <Border.BorderBrush>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                            <GradientStop Color="#30FFFFFF"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.BorderBrush>
+                                                    <Button x:Name="But_ContactoSolicitante" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="18" Height="18" ToolTip="Agregar o Editar Dirección " Margin="10,96,0,5" Click="But_ContactoSolicitante_Click">
+                                                        <Button.Background>
+                                                            <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/pen_16.png"/>
+                                                        </Button.Background>
+                                                    </Button>
+                                                </Border>
+
+                                                <TextBlock Height="22" Width="61" Text="Telefono" Background="#FFD6D6D6" Margin="10,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                                                <TextBlock Background="#FFD6D6D6" Height="22" Width="63" Text="Celular" Margin="10,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                                <TextBlock Height="22" Width="45" Background="#FFD6D6D6" Text="Fax" Margin="240,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                                                <TextBlock Background="#FFD6D6D6" Height="22" Width="44" Text="Email" Margin="242,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                                <TextBlock Height="22" Width="135" Margin="80,43,0,0" Text="{Binding Solicitud.Solicitante.Contacto.TelefonoA,ElementName=us_mantenimiento_procesos_control}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                                                <TextBlock Height="22" Width="135" Margin="80,71,0,0" Text="{Binding Solicitud.Solicitante.Contacto.MovilA,ElementName=us_mantenimiento_procesos_control}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                                <TextBlock Height="22" Width="194" Margin="298,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Solicitud.Solicitante.Contacto.FaxA,ElementName=us_mantenimiento_procesos_control}" RenderTransformOrigin="0.5,0.5" />
+                                                <TextBlock Height="22" Width="192" Margin="300,71,0,0" Text="{Binding Solicitud.Solicitante.Contacto.EmailA,ElementName=us_mantenimiento_procesos_control}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+
+                <TabItem x:Name="Tabi_Discapacidad" Header="Discapacidad">
+                    <Grid Background="#FFF0F0F0" Margin="0">
+                        <ScrollViewer>
+                            <Grid IsEnabled="{Binding Solicitud.EsSoloLectura, Converter={StaticResource ConvertNegacionBool},ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}">
+                                <Grid x:Name="Datos" Height="504" Margin="10,10,10,0" VerticalAlignment="Top">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="16*"/>
+                                        <RowDefinition Height="47*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Canvas Height="33" VerticalAlignment="Top" Background="#74747474">
+                                        <TextBlock HorizontalAlignment="Left" Text="Datos" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                        <Image Height="27" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/document_32.png"/>
+                                    </Canvas>
+                                    <Border x:Name="border_Copy2"  BorderThickness="1" d:IsLocked="True" Grid.RowSpan="2" >
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                <GradientStop Color="#30FFFFFF"/>
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                    </Border>
+
+
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="18,45,0,0" Text="Origen Siniestro" ToolTip="Tipo de Discapacidad" Height="24" Width="135" Background="#FFCDCDCD" Grid.Row="1"/>
+                                    <TextBlock TextWrapping="Wrap" Margin="17,107,0,0" Text="Fecha Solicitud" ToolTip="Fecha en que Inicio el proceso de jubilación o pensión" Height="24" VerticalAlignment="Top" Width="135" HorizontalAlignment="Left" Background="#FFCDCDCD" Grid.RowSpan="2"/>
+                                    <ComboBox  DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding Solicitud.OrigenSiniestro.Id,ElementName=us_mantenimiento_procesos_control}" SelectedItem="{Binding Solicitud.OrigenSiniestro, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True,ElementName=us_mantenimiento_procesos_control}"  x:Name="Com_OrigenSiniestro" HorizontalAlignment="Left" Margin="159,45,0,0" VerticalAlignment="Top" Width="251" Height="28" Grid.Row="1"/>
+                                    <TextBlock TextWrapping="Wrap" Margin="17,12,0,0" Text="Fecha Siniestro" ToolTip="Fecha en que Inicio el proceso de jubilación o pensión" Height="24" VerticalAlignment="Top" Width="135" HorizontalAlignment="Left" Background="#FFCDCDCD" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="18,78,0,0" Text="Tipo Siniestro" ToolTip="Tipo de Discapacidad" Width="135" Height="24" Background="#FFCDCDCD" Grid.Row="1"/>
+                                    <ComboBox DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding Solicitud.TipoSiniestro.Id,ElementName=us_mantenimiento_procesos_control}" SelectedItem="{Binding Solicitud.TipoSiniestro, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True,ElementName=us_mantenimiento_procesos_control}" x:Name="Com_TipoSiniestro" HorizontalAlignment="Left" Margin="159,78,0,0" VerticalAlignment="Top" Width="251" Height="28" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="17,114,0,0" Text="Aseguradora" ToolTip="Tipo de Discapacidad" Width="135" Height="24" Background="#FFCDCDCD" Grid.Row="1"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="159,107,0,0" x:Name="Dpk_FechaSolicitud" VerticalAlignment="Top" Width="271" SelectedDate="{Binding Solicitud.Fecha, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, ElementName=us_mantenimiento_procesos_control}" SelectedDateFormat="Long" Grid.RowSpan="2"/>
+                                    <DatePicker HorizontalAlignment="Left" Margin="159,12,0,0" x:Name="Dpk_FechaSiniestro" VerticalAlignment="Top" Width="271" SelectedDate="{Binding Solicitud.FechaSiniestro, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True, ElementName=us_mantenimiento_procesos_control}" SelectedDateFormat="Long" Grid.Row="1"/>
+                                    
+                                    <Grid x:Name="Requisitos" Height="187" Margin="442,47,10,0" VerticalAlignment="Top" Grid.RowSpan="2">
+                                        <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                                            <TextBlock HorizontalAlignment="Left" Text="Requisitos" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                            <Image Height="27" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/list_add_32.png"/>
+                                        </Canvas>
+                                        <Border x:Name="border_Copy3"  BorderThickness="1" d:IsLocked="True" >
+                                            <Border.BorderBrush>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                    <GradientStop Color="#30FFFFFF"/>
+                                                </LinearGradientBrush>
+                                            </Border.BorderBrush>
+                                        </Border>
+                                        <Button Content="" HorizontalAlignment="Left" Height="32" Margin="5,150,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}" Click="Button_Click_1">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/aadd_32.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button Content="" HorizontalAlignment="Left" Height="32" Margin="42,150,0,0" VerticalAlignment="Top" Width="32" BorderBrush="{x:Null}">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <ListView ItemsSource="{Binding Solicitud.Requisitos, ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}" Margin="5,38,5,37" >
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn>
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <CheckBox IsChecked="{Binding Valor}"/>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn Header="Nombre" Width="Auto" DisplayMemberBinding="{Binding Requisito.Nombre}" />
+                                                    <GridViewColumn Header="Fecha" Width="Auto" DisplayMemberBinding="{Binding Fecha}" />
+                                                    <GridViewColumn Header="Comentario" Width="Auto" DisplayMemberBinding="{Binding Comentario}" />
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                        <Grid Margin="0,155,5,10" HorizontalAlignment="Right" Width="100">
+                                            <ProgressBar x:Name="prg_requisitos" Value="{Binding Solicitud.RequisitosCompletadosP, Mode=OneWay,ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource SimpleProgressBar}" Minimum="0" Maximum="100" Margin="0" Height="17.65" VerticalAlignment="Top" ToolTip="Porciento y cuenta de requisitos completados por el docente."/>
+                                            <TextBlock x:Name="Txt_requisitos" TextWrapping="Wrap" Text="{Binding Solicitud.RequisitosCompletadosS, Mode=OneWay,ElementName=us_mantenimiento_procesos_control,UpdateSourceTrigger=PropertyChanged}" FontSize="12" TextAlignment="Center" Margin="10,2,10,4" ToolTip="Porciento y cuenta de requisitos completados por el docente."/>
+                                        </Grid>
+                                    </Grid>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="450,143,0,0" Text="Detalles" ToolTip="Tipo de Discapacidad" Width="135" Height="24" Background="#FFCDCDCD" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="17,226,0,0" Text="Porciento Pensión" ToolTip="Porciento de Pensión" Width="135" Background="#FFCDCDCD" Height="22" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock x:Name="Txt_PorcientoPension" HorizontalAlignment="Left" Margin="157,226,0,0" Width="52" FontWeight="Bold" FontSize="17" ToolTip="Porciento asignado por la aseguradora." Text="{Binding Solicitud.EscalaPesionDiscapacidad, StringFormat=\{0:F\}, UpdateSourceTrigger=PropertyChanged,ElementName=us_mantenimiento_procesos_control}" Height="20" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="214,225,0,0" TextWrapping="Wrap" Text="%" FontWeight="Bold" Height="23" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBox x:Name="Txt_Detalles" HorizontalAlignment="Left" Height="74" Margin="450,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" ToolTip="Detalles de la solicitud, puede agregar motivos de pensión, obsevaciones de la solicitud y otros." Text="{Binding Solicitud.Detalles, ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalScrollBarVisibility="Auto" FontSize="12" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="16,254,0,0" ToolTip="Monto de la pensión" Width="135" Background="#FFCDCDCD" Height="23" VerticalAlignment="Top" Grid.Row="1"><Run Language="es-do" Text="Monto"/><Run Text=" Pensión"/></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" Margin="158,255,0,0" TextWrapping="Wrap" FontWeight="Bold"  Width="271" Text="{Binding Solicitud.Monto, BindsDirectlyToSource=True, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, StringFormat=\{0:N\},ElementName=us_mantenimiento_procesos_control}" Height="24" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="17,143,0,0" ToolTip="Fecha de Concreción" Width="135" Background="#FFCDCDCD" Height="24" VerticalAlignment="Top" Grid.Row="1"><Run Language="es-do" Text="Fecha Concreción"/></TextBlock>
+                                    <DatePicker HorizontalAlignment="Left" ToolTip="Fecha de Concreción" Margin="159,143,0,0" x:Name="Dpk_FConcrecion" Width="269"  SelectedDate="{Binding Solicitud.FechaConcrecion, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True,ElementName=us_mantenimiento_procesos_control}" SelectedDateFormat="Long" Height="24" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="17,311,0,0" Text="Porciento Discapc." ToolTip="Porciento Discapacidad" Width="135" Background="#FFCDCDCD" Height="22" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBox x:Name="Txt_PorcientoDiscapacidad" HorizontalAlignment="Left" Margin="156,311,0,0" Width="52" FontWeight="Bold" FontSize="17" MaxLines="1" MaxLength="5" ToolTip="Porciento Discapacidad" Text="{Binding Solicitud.PorcientoDiscapacidad, ElementName=us_mantenimiento_procesos_control, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" Height="20" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" Margin="214,310,0,0" TextWrapping="Wrap" Text="%" FontWeight="Bold" Height="23" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="17,198,0,0" ToolTip="Promedio de los ultimos 12 salarios partiendo de la fecha de concreción" Width="135" Background="#FFCDCDCD" Height="22" VerticalAlignment="Top" Grid.Row="1"><Run Language="es-do" Text="Promedio Salarial"/></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" ToolTip="Promedio de los ultimos 12 salarios partiendo de la fecha de concreción" Margin="158,200,0,0" TextWrapping="Wrap" FontWeight="Bold"  Width="271" Text="{Binding Solicitud.Docente.HistorialPagos.PromedioMI, BindsDirectlyToSource=True, ElementName=us_mantenimiento_procesos_control, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, StringFormat=\{0:N\}}" Height="20" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="16,282,0,0" ToolTip="Monto a devolver al inabima" Width="135" Background="#FFCDCDCD" Height="24" VerticalAlignment="Top" Grid.Row="1"><Run Language="es-do" Text="Retroactivo"/></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" Margin="158,282,0,0" TextWrapping="Wrap" FontWeight="Bold"  Width="271" Text="{Binding Solicitud.Rectroactivo, BindsDirectlyToSource=True, ElementName=us_mantenimiento_procesos_control, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, StringFormat=\{0:N\}}" Height="24" VerticalAlignment="Top" Grid.Row="1"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="18,172,0,0" ToolTip="Ultima Fecha de cobro." Width="135" Background="#FFCDCDCD" Height="22" VerticalAlignment="Top" Grid.Row="1"><Run Language="es-do" Text="Ultimo Sueldo"/></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" ToolTip="" Margin="159,174,0,0" TextWrapping="Wrap" FontWeight="Bold"  Width="271" Text="{Binding Solicitud.Docente.HistorialPagos.Ultimo.Fecha, BindsDirectlyToSource=True, ElementName=us_mantenimiento_procesos_control, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, StringFormat=\{0:d\}}" Height="20" VerticalAlignment="Top" Grid.Row="1"/>
+
+                                    <Button HorizontalAlignment="Left" x:Name="But_Calcular"   Margin="17,0,0,10" Width="126" Height="28" VerticalAlignment="Bottom" ToolTip="Calcular beneficios con fecha suplida." Grid.Row="1" >
+                                        <Grid Width="102">
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,-9,0">
+                                                <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/refresh_32.png"/>
+                                                <TextBlock Margin="5,0,10,0" Width="75"><Run Language="es-do" Text="Calcular"/></TextBlock>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Button>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="17,74,0,0" Text="Tipo" ToolTip="Tipo de Discapacidad" Height="24" Width="135" Background="#FFCDCDCD"/>
+                                    <ComboBox  DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding Solicitud.OrigenBeneficio.Id, ElementName=us_mantenimiento_procesos_control,UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=False, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" SelectedItem="{Binding Solicitud.OrigenBeneficio, ElementName=us_mantenimiento_procesos_control}"  x:Name="Com_OrigenBeneficio" HorizontalAlignment="Left" Margin="159,74,0,0" VerticalAlignment="Top" Width="269" Height="28"/>
+
+
+                                </Grid>
+                                <Grid x:Name="Pasos" Margin="10,519,10,46">
+
+                                    <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" Margin="0,-1.5,0,0">
+                                        <TextBlock HorizontalAlignment="Left" Text="Pasos" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                                        <Image Height="27" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/document_32.png"/>
+                                    </Canvas>
+
+                                    <Border x:Name="border_Copy5"  BorderThickness="1" >
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#BC726E6E" Offset="1"/>
+                                                <GradientStop Color="#30FFFFFF"/>
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                    </Border>
+
+                                    <DataGrid x:Name="gridview1" Margin="5,36,5,10" ItemsSource="{Binding Solicitud.Pasos.Lista, ElementName=us_mantenimiento_procesos_control,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" CanUserSortColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" MouseDoubleClick="gridview1_MouseDoubleClick">
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn Binding="{Binding EsActivo, UpdateSourceTrigger=PropertyChanged}" >
+                                                <DataGridCheckBoxColumn.CellStyle>
+                                                    <Style>
+                                                        <Setter Property="UIElement.IsEnabled" Value="{Binding EsActivo, UpdateSourceTrigger=PropertyChanged}"/>
+                                                    </Style>
+                                                </DataGridCheckBoxColumn.CellStyle>
+                                            </DataGridCheckBoxColumn>
+
+                                            <DataGridTextColumn Binding="{Binding Paso.Nombre, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}"/>
+
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellStyle>
+                                                    <Style>
+                                                        <Setter Property="UIElement.IsEnabled" Value="{Binding EsActivo, UpdateSourceTrigger=PropertyChanged}"/>
+                                                    </Style>
+                                                </DataGridTemplateColumn.CellStyle>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <DatePickerTextBox Text="{Binding FechaIngreso, UpdateSourceTrigger=PropertyChanged}"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+                                    <!--<ListView x:Name="Lis_Pasos" Margin="5,50,5,5" ItemsSource="{Binding SolicitudPJ.Actual.Pasos.Lista,UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="Lis_Pasos_MouseDoubleClick">
+                                <ListView.View >
+                                    
+                                     <GridView>
+                                        <GridViewColumn>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox x:Name="Che_estado" IsChecked="{Binding EsActivo}" IsEnabled="{Binding EsActivo, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                         
+                                        <GridViewColumn DisplayMemberBinding="{Binding Paso.Nombre}" />
+                                        <GridViewColumn >
+                                            <GridViewColumn.CellTemplate >
+                                                <DataTemplate>
+                                                    <DatePickerTextBox IsEnabled="{Binding EsActivo, UpdateSourceTrigger=PropertyChanged}" Text="{Binding Fecha}"></DatePickerTextBox>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>-->
+
+                                </Grid>
+                                <Controles:ERSuplidormini x:Name="usc_aseguradora" SeleccionItem="usc_aseguradora_SeleccionItem" HorizontalAlignment="Left" Margin="170,250,0,0" VerticalAlignment="Top" Width="271"/>
+                                <Button HorizontalAlignment="Left" x:Name="But_Completar" Click="But_Completar_Click"  Margin="10,0,0,13" Width="126" Height="28" VerticalAlignment="Bottom" >
+                                    <Grid Width="102">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,-9,0">
+                                            <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                                            <TextBlock Margin="5,0,10,0" Width="75" TextAlignment="Center"><Run Language="es-do" Text="Completar"/></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </Button>
+
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <ProgressBar x:Name="pro_barglobal" Minimum="0" Maximum="100"  Foreground="{Binding Solicitud.Tiempos.DiferenciaTiemposPorciento, Converter={StaticResource Porciento4ColoresConvert}, ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}" Margin="0,6.667,10,0" Height="19.327" VerticalAlignment="Top" HorizontalAlignment="Right" Width="125" BorderBrush="#7FBCBCBC" ToolTip="Tiempo transcurrido de la solicitud(orientación de la barra inversa)." >
+                <ProgressBar.Effect>
+                    <DropShadowEffect RenderingBias="Quality" ShadowDepth="2" Direction="300" BlurRadius="3"/>
+                </ProgressBar.Effect>
+            </ProgressBar>
+            <Button x:Name="But_Tiempos" Margin="0,8,140,0" VerticalAlignment="Top" Height="18" ToolTip="Tiempos Solicitud." HorizontalAlignment="Right" Width="18" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/clock_16.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <TextBlock Margin="10,37,0,0" TextWrapping="Wrap" Text="{Binding Solicitud.NoExpediente, UpdateSourceTrigger=PropertyChanged,ElementName=us_mantenimiento_procesos_control}" VerticalAlignment="Top" Foreground="#FFEFFF4F" ToolTip="Estado Actual de la solicitud." FontWeight="Bold" HorizontalAlignment="Left" Width="101"/>
+        <TextBlock Margin="0,37,10,0" TextWrapping="Wrap" Text="{Binding Solicitud.EstadoActual.Estado.Nombre, ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Foreground="#FFEFFF4F" ToolTip="Estado Actual de la solicitud." FontWeight="Bold" TextAlignment="Right" HorizontalAlignment="Right" Width="525"/>
+    </Grid>
+</UserControl>

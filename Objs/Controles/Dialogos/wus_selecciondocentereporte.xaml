@@ -1,0 +1,23 @@
+﻿<Window x:Class="SIC.Objs.Controles.wus_selecciondocentereporte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Selección Reporte" Height="320" Width="429" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Button x:Name="But_Ver" Content="Ver" HorizontalAlignment="Left" Margin="27,241,0,0" Width="76" Height="20" VerticalAlignment="Top" Click="But_Ver_Click" ToolTip="Ver reporte Seleccionado"/>
+        <Button x:Name="But_Salir" Content="Salir" HorizontalAlignment="Left" Margin="108,241,0,0" Width="75" Click="But_Salir_Click"  Height="20" VerticalAlignment="Top"/>
+        <GroupBox Header="Seleccione" HorizontalAlignment="Center" Height="149" Margin="23,83,46,0" VerticalAlignment="Top" Width="354">
+            <StackPanel >
+                <RadioButton GroupName="Report" Content="Familiale(s) Beneficiarios" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1" ToolTip="Familiar(es) Beneficiados por fallecimiento del docente."/>
+                <RadioButton GroupName="Report" Content="Plan Funerario" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_2" ToolTip="Detalles Plan de Funerario"/>
+                <RadioButton GroupName="Report" Content="Post-Activo" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" ToolTip="Sueldos Post-Activo(Cobrados despues del fallecimiento)"/>
+                
+                <RadioButton x:Name="rb_rectroactivo" GroupName="Report" Content="Retro-Activo" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rb_rectroactivo_Checked"  ToolTip="Sueldos Post-Activo(Cobrados despues del fallecimiento)"/>
+                <RadioButton x:Name="rb_comentario" GroupName="Report" Content="Comentarios" Margin="10,10,0,0" VerticalAlignment="Top" Checked="rb_comentario_Checked"  ToolTip="Sueldos Post-Activo(Cobrados despues del fallecimiento)"/>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock HorizontalAlignment="Left" Margin="67,10,0,0" TextWrapping="Wrap" Text="Selección de Reporte, existen dos reportes disponibles, Familiares Beneficiados y Plan Funenario. Estos reporte son aplican para docente Fallecidos." VerticalAlignment="Top" Width="297" Height="68"/>
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,15,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/report_48.png"/>
+
+    </Grid>
+</Window>

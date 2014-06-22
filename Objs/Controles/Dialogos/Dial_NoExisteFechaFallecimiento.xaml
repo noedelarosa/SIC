@@ -1,0 +1,12 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_NoExisteFechaFallecimiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="No EXISTE Fecha de Fallecimiento" Height="225" Width="549" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Margin="66,18,66,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"><Run Language="es-do" Text="Alerta, NO EXISTE FECHA DE FALLECIMIENTO"/></TextBlock>
+        <Image HorizontalAlignment="Left" Height="42" Margin="10,10,0,0" VerticalAlignment="Top" Width="42" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+        <Button Content="Aceptar" Margin="185,137,0,0" HorizontalAlignment="Left" Width="141" Height="29" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock Margin="66,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="411"><Run Language="es-do" Text="Alerta, El docente seleccionado no tiene fecha de fallecimiento registrada en el sistema,  ingrese la fecha de fallecimiento para fines de calculo."/></TextBlock>
+
+    </Grid>
+</Window>

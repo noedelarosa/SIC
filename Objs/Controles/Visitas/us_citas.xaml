@@ -1,0 +1,75 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SIC.Objs.Controles" xmlns:Dialogos="clr-namespace:SIC.Objs.Controles.Dialogos" 
+    xmlns:Controls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls" x:Class="SIC.Objs.Controles.us_citas"
+             mc:Ignorable="d" 
+             x:Name="us_citas_control">
+    <Grid Background="#FFF3F3F3"  >
+
+        <Button HorizontalAlignment="Left"  x:Name="But_Atras" Visibility="Hidden"  Margin="123,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                    <TextBlock Margin="5,5,10,0" Height="19"  VerticalAlignment="Top"><InlineUIContainer>
+							<AccessText Text="_Atras"/>
+						</InlineUIContainer></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <Button HorizontalAlignment="Left"  x:Name="But_Finalizar" Click="But_Finalizar_Click"  Margin="16,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                    
+                    <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top">
+                        <InlineUIContainer>
+							<AccessText Text="_Finalizar"/>
+						</InlineUIContainer>
+                    </TextBlock>
+                    
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <Grid x:Name="Direccion_Solicitante"  Margin="10,10,10,72">
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" d:IsLocked="True">
+                <TextBlock ToolTip="Información Cita" HorizontalAlignment="Left" Text="Información Cita" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" ToolTip="Dirección" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/mail_down_32.png"/>
+            </Canvas>
+            <Border x:Name="border_Copy7"  BorderThickness="1" d:IsLocked="True" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <Grid Margin="10,38,10,10">
+                <ComboBox HorizontalAlignment="Left" x:Name="com_motivo" ItemsSource="{Binding Motivos.Lista, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedItem="{Binding Cita.Motivo, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Cita.Motivo.Id, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}"  Margin="117,31,0,0" VerticalAlignment="Top" Width="252"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Language="es-do" Text="Motivo:"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Hora Captura:"/></TextBlock>
+                <TextBlock x:Name="txt_fecha" HorizontalAlignment="Left" Margin="117,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="12/08/2013 12:54 P.M."/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="10,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Language="es-do" Text="Asignado a:"/></TextBlock>
+                <ComboBox x:Name="com_destino" DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding Cita.Personal.Departamento.Id, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Cita.Personal.Departamento, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Departamentos, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="117,85,0,0" VerticalAlignment="Top" Width="252"/>
+                <TextBox x:Name="Txt_Referencia" HorizontalAlignment="Left" Height="117" Margin="117,122,0,0" TextWrapping="Wrap" Text="{Binding Cita.Referencia, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="252" MaxLength="500" MaxLines="50" VerticalScrollBarVisibility="Visible"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Language="es-do" Text="Referencia:"/></TextBlock>
+                <ComboBox x:Name="com_asinar" DisplayMemberPath="NombreCompleto" SelectedValuePath="Cedula" SelectedItem="{Binding Cita.Personal, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Cita.Personal.Cedula, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Personal.Lista, ElementName=us_citas_control, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="117,58,0,0" VerticalAlignment="Top" Width="252"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"><Run Language="es-do" Text="Destino:"/></TextBlock>
+                
+                <Border BorderBrush="#FF838383" BorderThickness="1">
+                    
+                </Border>
+                
+            </Grid>
+            
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

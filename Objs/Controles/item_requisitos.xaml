@@ -1,0 +1,16 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="SIC.item_requisitos"
+	x:Name="UserControl"
+	d:DesignWidth="180" d:DesignHeight="20" >
+
+	<Grid x:Name="LayoutRoot">
+		<CheckBox HorizontalAlignment="Left" Margin="2,2,0,2"/>
+		<TextBlock HorizontalAlignment="Left" Margin="19.978,2,0,2" TextWrapping="Wrap" Text="Copia Cedula" Width="109.692" FontFamily="Calibri"/>
+		<DatePickerTextBox HorizontalAlignment="Left" Margin="108,2,-0.001,0" TextWrapping="Wrap" Text="DatePickerTextBox" VerticalAlignment="Top" Width="72.001" Height="16"/>
+	</Grid>
+</UserControl>

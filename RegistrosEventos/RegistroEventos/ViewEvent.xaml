@@ -1,0 +1,87 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" 
+             xmlns:Controls="clr-namespace:Empresa.Comun.Controls;assembly=Empresa.Comun" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+             x:Class="Empresa.RegistrosEventos.RegistroEventos.ViewEvent" 
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <xcdg:DataGridCollectionViewSource x:Key="osource" Source="{Binding UpdateSourceTrigger=PropertyChanged}"></xcdg:DataGridCollectionViewSource>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Height="66" Margin="10,10,10,0" VerticalAlignment="Top" Background="#FFDEDEDE">
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="imgs/school_events_config_48.png"/>
+            <TextBlock HorizontalAlignment="Left" Margin="70,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"><Run Language="es-do" Text="Eventos Usuario"/></TextBlock>
+            <TextBlock Height="21" Margin="72,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="680"><Run Language="es-do" Text="Visor de eventos de usuario, con la siguiente búsqueda puede visualizar los eventos de los usuarios."/></TextBlock>
+        </Grid>
+        <Grid Height="92" Margin="10,212,10,0" VerticalAlignment="Top" Background="#FFDEDEDE">
+            <CheckBox Content="Organizar por hilo evento" HorizontalAlignment="Left" Margin="65,7,0,0" VerticalAlignment="Top" Width="204"/>
+            <TextBlock HorizontalAlignment="Left" Margin="8,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="F. Inicio"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="8,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="F. Final"/></TextBlock>
+            <xctk:DateTimePicker HorizontalAlignment="Left" Height="26" Margin="65,27,0,0" VerticalAlignment="Top" Width="292" x:Name="dtp_fecha_inicio"/>
+            <xctk:DateTimePicker HorizontalAlignment="Left" Height="26" Margin="65,58,0,0" VerticalAlignment="Top" Width="292" x:Name="dtp_fecha_final"/>
+        </Grid>
+        <Grid Height="86" Margin="10,81,10,0" VerticalAlignment="Top" Background="#FFD3D2D2">
+            <TextBlock HorizontalAlignment="Left" Margin="96,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"><Run Language="es-do" Text="Julio alberto" FontWeight="Bold" FontSize="14"/></TextBlock>
+            <Grid HorizontalAlignment="Left" Height="70" Margin="10,10,0,0" VerticalAlignment="Top" Width="70">
+                <Border BorderBrush="Black" BorderThickness="1" />
+                <Image/>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="96,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"><Run Language="es-do" Text="julio.alberto"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="96,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"><Run Language="es-do" Text="Recepcion"/></TextBlock>
+        </Grid>
+
+        <Button x:Name="But_BuscarUsuario" Content="Buscar Usuario" Click="But_BuscarUsuario_Click" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="119"/>
+        <Button x:Name="But_BuscarEvento" Content="Buscar Evento" Click="But_BuscarEvento_Click" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top" Width="119"/>
+
+
+        <xcdg:DataGridControl  ItemsSourceName="Docente(s)" ItemsSource="{Binding Source={StaticResource osource}}" x:Name="datagrid1" AutoCreateColumns="False" HorizontalAlignment="Stretch" SelectionMode="Single" Margin="10,349,10,45"  ItemScrollingBehavior="Immediate">
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="Usuario.Nombre" Title="Usuario"/>
+                <xcdg:Column FieldName="Fecha" Title="Fecha"/>
+                <xcdg:Column FieldName="Modulo" Title="Modulo"/>
+                <xcdg:Column FieldName="Objecto" Title="Objecto"/>
+                <xcdg:Column FieldName="Tarea.Nombre" Title="Tarea"/>
+                <xcdg:Column FieldName="Referencia" Title="Referencia"/>
+                <xcdg:Column FieldName="Descripcion" Title="Descripcion"/>
+                <xcdg:Column FieldName="IdProcesador" Title="Ident. Procesador"/>
+                <xcdg:Column FieldName="NombreComputadora" Title="Computadora"/>
+            </xcdg:DataGridControl.Columns>
+
+            <xcdg:DataGridControl.View>
+                <xcdg:TableView  ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow />
+                        </DataTemplate>
+                    </xcdg:TableView.Headers>
+
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." xcdg:TableView.CanScrollHorizontally="False" />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+
+                    <xcdg:TableView.Theme>
+                        <xcdg:AeroNormalColorTheme/>
+                    </xcdg:TableView.Theme>
+                </xcdg:TableView>
+            </xcdg:DataGridControl.View>
+
+        </xcdg:DataGridControl>
+        <Button x:Name="But_Imprimir" Content="Imprimir" HorizontalAlignment="Left" Margin="10,0,0,20" Width="119" Height="20" VerticalAlignment="Bottom"/>
+
+
+
+
+
+    </Grid>
+</UserControl>

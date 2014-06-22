@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.us_Mantenimiento_Decreto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" x:Name="UserControl" >
+    <Grid>
+        <Grid Height="94" Margin="10,10,10,0" VerticalAlignment="Top" Background="#FFDEDEDE">
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/decreto_48.png"/>
+            <TextBlock HorizontalAlignment="Left" Margin="70,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" FontWeight="Bold" FontSize="16"><Run Language="es-do" Text="Mantenimiento de Decretos"/></TextBlock>
+            <TextBlock Height="60" Margin="72,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="642"><Run Language="es-do" Text="El siguiente Asistente le ayudara a crear y modificar los decretos, debe tener disponible el Numero de decreto, las fechas de emsion y primer pago puede dejar la fecha por defecto que posteriormente seran modificadas corespondiente sus fecha de emsión(cuando se emita el decreto y cuando sea haga la primera fecha de pago del decreto)"/></TextBlock>
+        </Grid>
+        <TabControl x:Name="tab_control" Margin="10,109,10,50">
+            <TabItem Header="Crear">
+                <Grid Background="#FFF0EEEE" >
+                    <Grid  Margin="10,51,10,70">
+                        <Border BorderBrush="#FF878787" BorderThickness="1" Margin="0"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Número Decreto"/></TextBlock>
+                        <TextBox x:Name="Txt_Decreto" Text="{Binding Decreto.Numero,ElementName=UserControl, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" HorizontalAlignment="Left" Height="23" Margin="137,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" ToolTip="Indique que el numero de decreto. Empl(334-12)" MaxLines="1" MaxLength="15"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Primero Fecha Pago"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Fecha Emisión"/></TextBlock>
+                        <DatePicker x:Name="Txt_FechaEmision" SelectedDateFormat="Long" SelectedDate="{Binding Decreto.FechaEmision,ElementName=UserControl, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,34,0,0" VerticalAlignment="Top" Width="251" ToolTip="Fecha por defecto."/>
+                        <DatePicker x:Name="Txt_FechaPrimerPago" SelectedDateFormat="Long" SelectedDate="{Binding Decreto.FechaPrimerPago, ElementName=UserControl, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,62,0,0" VerticalAlignment="Top" Width="251" ToolTip="fecha por defecto."/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Fecha Promedio"/></TextBlock>
+                        <DatePicker x:Name="Txt_FechaPromedio" SelectedDateFormat="Long" SelectedDate="{Binding Decreto.FechaPromedio, ElementName=UserControl, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,92,0,0" VerticalAlignment="Top" Width="251" ToolTip="fecha por defecto."/>
+                        <TextBlock HorizontalAlignment="Left" Margin="393,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"><Run Language="es-do" Text="Inicio Fecha, Promedio 12 meses Apartir de la presente fecha"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="137,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" ToolTip="solo se utiliza año y mes para el calculo del promedio." FontWeight="Bold" Foreground="#FF5D5D5D"><Run Language="es-do" Text="Solo se utiliza Año y Mes."/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="138,132,0,0" TextWrapping="Wrap" Width="250" ToolTip="Nombre de persona quien decreta el documento(Decreto)." FontWeight="Bold" Foreground="#FF5D5D5D" Text="{Binding Decreto.Presidente.Nombres,UpdateSourceTrigger=PropertyChanged, ElementName=UserControl}" Height="16" VerticalAlignment="Top"><Run Language="es-do"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="11,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Decretado por:"/></TextBlock>
+                        <!--<Border BorderBrush="#FF878787" BorderThickness="1" Margin="0"/>-->
+                    </Grid>
+                    <Label Content="Creando Decreto" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="146" FontSize="16" FontWeight="Bold"/>
+                    <Grid Margin="9,209,10,0">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="Ultimo Decreto"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" x:Name="Txt_UltimoDecreto" Margin="145,13,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="93"/>
+                        <Border BorderBrush="#FF878787" BorderThickness="1" Margin="0"/>
+
+
+                        <Button x:Name="But_AgregarUltimo" Content="Agregar Docentes" HorizontalAlignment="Left" Height="21" Margin="10,34,0,0" VerticalAlignment="Top" Width="137"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Modificar" Loaded="TabItem_Loaded" >
+                <Grid Background="#FFE5E5E5">
+                    <ComboBox x:Name="com_decretos" DisplayMemberPath="Numero" Margin="148,22,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="249"></ComboBox>
+
+                    <Grid  Margin="10,51,10,70">
+                        <Border BorderBrush="#FF878787" BorderThickness="1" Margin="0"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Número Decreto"/></TextBlock>
+                        <TextBox x:Name="Txt_Decreto_modificacion" Text="{Binding SelectedItem.Numero,ElementName=com_decretos, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" HorizontalAlignment="Left" Height="23" Margin="137,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" ToolTip="Indique que el numero de decreto. Empl(334-12)" MaxLines="1" MaxLength="15"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Primero Fecha Pago"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Fecha Emisión"/></TextBlock>
+                        <DatePicker x:Name="Txt_FechaEmision_modificacion" SelectedDateFormat="Long" SelectedDate="{Binding SelectedItem.FechaEmision,ElementName=com_decretos, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,34,0,0" VerticalAlignment="Top" Width="251" ToolTip="Fecha por defecto."/>
+                        <DatePicker x:Name="Txt_FechaPrimerPago_modificacion" SelectedDateFormat="Long" SelectedDate="{Binding SelectedItem.FechaPrimerPago, ElementName=com_decretos, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True,ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,62,0,0" VerticalAlignment="Top" Width="251" ToolTip="fecha por defecto."/>
+                        <TextBlock HorizontalAlignment="Left" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Fecha Promedio"/></TextBlock>
+                        <DatePicker x:Name="Txt_FechaPromedio_modificacion" SelectedDateFormat="Long" SelectedDate="{Binding SelectedItem.FechaPromedio, ElementName=com_decretos, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" Margin="137,92,0,0" VerticalAlignment="Top" Width="251" ToolTip="fecha por defecto."/>
+                        <TextBlock HorizontalAlignment="Left" Margin="393,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"><Run Language="es-do" Text="Inicio Fecha, Promedio 12 meses Apartir de la presente fecha"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="137,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" ToolTip="solo se utiliza año y mes para el calculo del promedio." FontWeight="Bold" Foreground="#FF5D5D5D"><Run Language="es-do" Text="Solo se utiliza Año y Mes."/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="138,132,0,0" TextWrapping="Wrap" Width="250" ToolTip="Nombre de persona quien decreta el documento(Decreto)." FontWeight="Bold" Foreground="#FF5D5D5D" Text="{Binding SelectedItem.Presidente.Nombres,UpdateSourceTrigger=PropertyChanged, ElementName=com_decretos}" Height="16" VerticalAlignment="Top"><Run Language="es-do"/></TextBlock>
+                        <TextBlock HorizontalAlignment="Left" Margin="11,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"><Run Language="es-do" Text="Decretado por:"/></TextBlock>
+                        <!--<Border BorderBrush="#FF878787" BorderThickness="1" Margin="0"/>-->
+                    </Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Seleccione el decreto"/></TextBlock>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Grid Margin="12,0,10,10" Height="40" VerticalAlignment="Bottom">
+            <Button x:Name="But_Guardar" Click="But_Guardar_Click" Content="Guardar" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="99"/>
+            <Button x:Name="But_Cancelar" Click="But_Cancelar_Click" Content="Cancelar" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" Width="99"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

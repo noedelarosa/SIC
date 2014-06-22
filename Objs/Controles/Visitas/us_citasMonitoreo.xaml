@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.us_citasMonitoreo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             mc:Ignorable="d">
+
+
+    <UserControl.Resources>
+        <xcdg:DataGridCollectionViewSource Source="{Binding}" x:Key="source" AutoCreateItemProperties="True" AutoFilterMode="And"></xcdg:DataGridCollectionViewSource>
+    </UserControl.Resources>
+    <Grid>
+
+        <xcdg:DataGridControl  ItemsSource="{Binding Source={StaticResource source}}" ItemsSourceName="Actividad" x:Name="datagrid1" AutoCreateColumns="False" HorizontalAlignment="Stretch"  SelectionMode="Single"  NavigationBehavior="RowOnly" ItemScrollingBehavior="Immediate" Margin="10,191,10,35">
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="Numero" Title="Número"></xcdg:Column>
+                <xcdg:Column FieldName="Personal.Nombres" Title="Personal Atendio"></xcdg:Column>
+                
+                <xcdg:Column FieldName="Motivo.Nombre" Title="Nombre"></xcdg:Column>
+                <xcdg:Column FieldName="Visitante.Cedula" Title="Visitante Cedula"></xcdg:Column>
+                <xcdg:Column FieldName="Visitante.Nombres" Title="Visitante Nombre"></xcdg:Column>
+                <xcdg:Column FieldName="Estado.Nombre" Title="Estado"></xcdg:Column>
+            </xcdg:DataGridControl.Columns>
+
+            <xcdg:DataGridControl.View>
+                <xcdg:TableView  ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow />
+                        </DataTemplate>
+                    </xcdg:TableView.Headers>
+
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." xcdg:TableView.CanScrollHorizontally="False" />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+
+                    <xcdg:TableView.Theme>
+                        <xcdg:AeroNormalColorTheme/>
+                    </xcdg:TableView.Theme>
+                </xcdg:TableView>
+            </xcdg:DataGridControl.View>
+
+        </xcdg:DataGridControl>
+        <Grid Background="#FFDEDEDE" Margin="10,10,10,0" Height="176" VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" Margin="67,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Height="33"><Run Text="Aplique el filtro en funci"/><Run Language="es-do" Text="ó"/><Run Text="n a los parametros seleccionado"/><Run Language="es-do" Text="s."/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="472" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Monitoreo de Actividades(Recepción)"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/monitor_48.png"/>
+
+            <Grid Height="68" Margin="66,66,25,0" VerticalAlignment="Top">
+                <ComboBox DisplayMemberPath="Nombre" x:Name="com_estado" Margin="79,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="366"/>
+                <TextBlock HorizontalAlignment="Left" Margin="8,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"><Run Language="es-do" Text="Estado"/></TextBlock>
+                <Grid HorizontalAlignment="Left" Height="21" Margin="10,37,0,0" VerticalAlignment="Top" Width="435">
+                    <TextBlock HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="Actualización periodica:" VerticalAlignment="Top" Width="130"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="135,0,0,0">
+                        <RadioButton Content="1 Min" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0,0,5,0"/>
+                        <RadioButton Content="5 Min" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0,0,5,0"/>
+                        <RadioButton Content="10 Min" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0,0,5,0"/>
+                        <RadioButton Content="30 Min" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0,0,5,0"/>
+                        <RadioButton Content="60 Min" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    </StackPanel>
+                </Grid>
+                <!--<Border BorderBrush="Black" BorderThickness="1"/>-->
+            </Grid>
+
+
+            <Button HorizontalAlignment="Left"  x:Name="But_Buscar" Click="But_Buscar_Click"  Margin="66,0,0,9" Width="102" Height="28" VerticalAlignment="Bottom">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top" Width="49"><Run Language="es-do" Text="Buscar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Button HorizontalAlignment="Left"  x:Name="But_Buscar_Copy"  Margin="515,0,0,75" Width="28" Height="28" ToolTip="Reset Estado." VerticalAlignment="Bottom">
+                <Grid>
+                        <Image Width="24" Height="24" Margin="0,0,0,0" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                </Grid>
+            </Button>
+        </Grid>
+
+    </Grid>
+</UserControl>

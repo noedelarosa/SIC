@@ -1,0 +1,33 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_CambioEstadoSolicitudPJ"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Dial_CambioEstadoSolicitudPJ_us"
+        Title="Desea cambiar el estado de la solicitud?" Height="379.357" Width="542.251" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Image HorizontalAlignment="Left" Height="48" Margin="25,19,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/switch_off_help_48.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="98,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="Desea cambiar el estado de la solicitud?"/></TextBlock>
+        <TextBlock Margin="98,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" HorizontalAlignment="Left" Width="335" FontSize="13"><Run Language="es-do" Text="Está Seguro que desea CAMBIAR EL ESTADO de la solicitud de pensión por discapacidad?"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="98,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="16" FontWeight="Bold" Foreground="#FF666C2A" ToolTip="Nuevo Estado que se aplicara a la solicitud" Text="{Binding ElementName=Dial_CambioEstadoSolicitudPJ_us, Path=Estado.Estado.Nombre,UpdateSourceTrigger=PropertyChanged}"><Run Language="es-do"/></TextBlock>
+        <Button HorizontalAlignment="Left" Click="But_Aceptar_Click"  x:Name="But_Aceptar"  Margin="98,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Aceptar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" Click="But_Cerrar_Click"  x:Name="But_Cerrar"  Margin="205,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Cerrar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="25,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Fecha"/></TextBlock>
+        <TextBlock x:Name="Txt_Fecha" HorizontalAlignment="Left" Margin="98,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Text="{Binding ElementName=Dial_CambioEstadoSolicitudPJ_us, Path=Estado.Fecha,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="24,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69"><Run Language="es-do" Text="Descripción"/></TextBlock>
+        <TextBox x:Name="Txt_Descripcion" HorizontalAlignment="Left" Height="122" Margin="98,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Text="{Binding ElementName=Dial_CambioEstadoSolicitudPJ_us, Path=Estado.Descripcion,UpdateSourceTrigger=PropertyChanged}" ToolTip="Detalle del cambio de estado de la solicitud." VerticalScrollBarVisibility="Visible"/>
+        <TextBlock HorizontalAlignment="Left" Margin="98,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontStyle="Italic" Foreground="#FF7C7B7B"><Run Language="es-do" Text="Explique porque desea cambiar el estado de la solicitud."/></TextBlock>
+
+    </Grid>
+</Window>

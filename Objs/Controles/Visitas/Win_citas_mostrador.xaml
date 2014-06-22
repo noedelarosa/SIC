@@ -1,0 +1,64 @@
+﻿<Window xmlns:Controles="clr-namespace:SIC.Objs.Controles"  xmlns:Dialogos="clr-namespace:SIC.Objs.Controles.Dialogos" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" x:Class="SIC.Objs.Controles.Win_citas_mostrador"
+        
+    Width="1380.679" Height="709.422"
+    >
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFC5C5C5" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Height="198" Margin="10,10,10,0" VerticalAlignment="Top" Background="#FFEAEAEA">
+            <TextBlock Margin="186,10,10,0" TextWrapping="Wrap" Text="INABIMA" VerticalAlignment="Top" FontSize="120" FontWeight="Bold" Foreground="#FF408D00" Height="134" FontFamily="Verdana"/>
+            <TextBlock Margin="199,144,10,0" TextWrapping="Wrap" Text="INSTITUTO NACIONAL DE BIENESTAR MAGISTERIAL" VerticalAlignment="Top" FontSize="40"/>
+            <Image HorizontalAlignment="Left" Height="168" Margin="8,23,0,0" VerticalAlignment="Top" Width="176" Source="/SIC;component/Objs/Comun/imgs/logo_ina.png" Stretch="Fill" Opacity="0.8"/>
+
+        </Grid>
+        <Grid>
+            <TextBlock Margin="10,212,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="80" TextAlignment="Center" Height="94" Background="#FF0A3800" Foreground="White" FontFamily="Verdana" FontWeight="Bold"><Run Language="es-do" Text="Número Turno"/></TextBlock>
+            <Grid Margin="10,311,10,10">
+                <Border BorderBrush="#FF152C0C" BorderThickness="1"></Border>
+
+                <!--<WrapPanel x:Name="wp_contenido">
+                    <ListView ItemsSource="{Binding}" SelectionMode="Single" Height="294" Width="1350">
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Dialogos:item_Visitas_Mostrador Cita="{Binding}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>-->
+
+                <ListView x:Name="list01" ItemsSource="{Binding}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+
+                            <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+                            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                            ItemWidth="{Binding (ListView.View).ItemWidth, 
+                            RelativeSource={RelativeSource AncestorType=ListView}}"
+                            MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                            ItemHeight="{Binding (ListView.View).ItemHeight, 
+                            RelativeSource={RelativeSource AncestorType=ListView}}" />
+
+                        </ItemsPanelTemplate>
+
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Dialogos:item_Visitas_Mostrador Cita="{Binding}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

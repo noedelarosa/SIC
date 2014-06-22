@@ -1,0 +1,19 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_Seleccion_02"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Que Desea Imprimir?" Height="275.556" Width="516.667" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,19,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/help_48.png" RenderTransformOrigin="0.539,0.66"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-do" Text="Que Desea Imprimir?"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="44" Margin="73,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370"><Run Language="es-do" Text="Puede Imprimir los datos básicos del docente o la certificación de trabajo. "/></TextBlock>
+        <GroupBox Margin="73,93,10,0" Height="79" Header="Seleccione" VerticalAlignment="Top">
+            <StackPanel Margin="5">
+                <RadioButton Content="Datos Básicos"  Checked="RadioButton_Checked_1" Margin="0,5,0,5" IsChecked="True" GroupName="Datos" FontWeight="Bold"/>
+                <RadioButton Content="Certificación" GroupName="Datos" Checked="RadioButton_Checked" FontWeight="Bold"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Aceptar" Click="But_Si_Click"  HorizontalAlignment="Left" Margin="75,187,0,0" VerticalAlignment="Top" Width="75" x:Name="But_Si"/>
+        <Button Content="Cancelar"  Click="But_No_Click"  HorizontalAlignment="Left" Margin="155,187,0,0" VerticalAlignment="Top" x:Name="But_No" Width="75"/>
+
+    </Grid>
+</Window>

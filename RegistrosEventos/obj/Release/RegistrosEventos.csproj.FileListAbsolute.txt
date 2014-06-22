@@ -1,0 +1,8 @@
+D:\INABIMA\RegistrosEventos\obj\Release\RegistrosEventos.csprojResolveAssemblyReference.cache
+D:\INABIMA\RegistrosEventos\obj\Release\RegistroEventos\ViewEvent.baml
+D:\INABIMA\RegistrosEventos\obj\Release\RegistroEventos\ViewEvent.g.cs
+D:\INABIMA\RegistrosEventos\obj\Release\Empresa.RegistrosEventos_MarkupCompile.cache
+D:\INABIMA\RegistrosEventos\obj\Release\Empresa.RegistrosEventos.g.resources
+D:\INABIMA\RegistrosEventos\obj\Release\Empresa.RegistrosEventos.RegistroEventos.Form1.resources
+D:\INABIMA\RegistrosEventos\obj\Release\RegistrosEventos.csproj.GenerateResource.Cache
+D:\INABIMA\RegistrosEventos\obj\Release\Empresa.RegistrosEventos.dll.licenses

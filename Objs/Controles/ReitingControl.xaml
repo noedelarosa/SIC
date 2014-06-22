@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.ReitingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"  x:Name="us_ReitingControl_control"
+             xmlns:Controls="clr-namespace:DevComponents.WPF.Controls;assembly=DevComponents.WPF.Controls"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ListView x:Name="lis_resultado" ItemsSource="{Binding ElementName=us_ReitingControl_control, Path=Valoraciones, UpdateSourceTrigger=PropertyChanged}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Indicador.Nombre}" Header="Nombre"></GridViewColumn>
+                    
+                    <GridViewColumn Header="Valoración">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Controls:RatingControl MaxRating="{Binding Indicador.Valoracion, UpdateSourceTrigger=PropertyChanged}" Rating="{Binding Resultado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  x:Name="rt_control01" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD1E4208-4FFB-4155-B02A-3A8D4CE6DACD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIC</RootNamespace>
+    <AssemblyName>SIC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <Utf8Output>true</Utf8Output>
+    <PublishUrl>\\SRV-INABIMA\c%24\inetpub\wwwroot\SIC\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://10.0.0.252/SIC/</InstallUrl>
+    <ProductName>SIC%28Sistema Integrado de consultas%29</ProductName>
+    <PublisherName>SIC</PublisherName>
+    <SuiteName>Sistema de Integrado de Consultas</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>190</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2D4BC6F4F4958D62173CBABFEA03D109AE49A8D4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SIC.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>Objs\Comun\imgs\notepad_zoom_48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ConectionString">
+      <HintPath>H:\M-TAF\Herramientas\lib\ConectionString.dll</HintPath>
+    </Reference>
+    <Reference Include="devcomponents.wpf.controls, Version=7.2.0.46, Culture=neutral, PublicKeyToken=65042117d0a83cbc, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.1.UI, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.1.Extensions, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Empresa.Comun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Comun\bin\Debug\Empresa.Comun.dll</HintPath>
+    </Reference>
+    <Reference Include="Empresa.RHH, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Rhh\bin\Debug\Empresa.RHH.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WIA">
+      <HintPath>..\ScanEXP\Scantest\bin\Release\Interop.WIA.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls" />
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Expression.Effects" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SCI2\SCI\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="ScanEXP">
+      <HintPath>..\ScanEXP\Scantest\bin\Release\ScanEXP.dll</HintPath>
+    </Reference>
+    <Reference Include="Seguridad">
+      <HintPath>H:\Contrato\Contrato\bin\Debug\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="SSData">
+      <HintPath>H:\Contrato\Contrato\bin\Debug\SSData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="system.windows.controls.datavisualization.toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfPageTransitions">
+      <HintPath>..\SCI2\SCI\bin\Debug\WpfPageTransitions.dll</HintPath>
+    </Reference>
+    <Reference Include="wpftoolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Xceed.Wpf.Controls.v4.3">
+      <HintPath>..\M-TAF\Herramientas\lib\Xceed.Wpf.Controls.v4.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.v4.3">
+      <HintPath>..\M-TAF\Herramientas\lib\Xceed.Wpf.DataGrid.v4.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\M-TAF\Herramientas\lib\Toolkit\2.0\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Objs\Citas\CitasVisitas.cs" />
+    <Compile Include="Objs\Citas\EstadoVisita.cs" />
+    <Compile Include="Objs\Citas\Indicadores.cs" />
+    <Compile Include="Objs\Citas\Motivo.cs" />
+    <Compile Include="Objs\Citas\PersonalPreAsignado.cs" />
+    <Compile Include="Objs\Citas\Reports\XtraTick.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Citas\Reports\XtraTick.Designer.cs">
+      <DependentUpon>XtraTick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Citas\tipos\TCitasVisitas.cs" />
+    <Compile Include="Objs\Citas\tipos\tindicadores.cs" />
+    <Compile Include="Objs\Citas\tipos\TMotivoVisitas.cs" />
+    <Compile Include="Objs\Citas\tipos\tvaloracion.cs" />
+    <Compile Include="Objs\Citas\Valoracion.cs" />
+    <Compile Include="Objs\Comun\comparacion_tiempo_distinto_sf.cs" />
+    <Compile Include="Objs\Comun\ConvertColorBool_YelRed.cs" />
+    <Compile Include="Objs\Comun\ConvertFiltroMunicipio.cs" />
+    <Compile Include="Objs\Comun\ConvertTextoEsDocente.cs" />
+    <Compile Include="Objs\Comun\valores_dependientes_independientes.cs" />
+    <Compile Include="Objs\Controles\BusquedaListaPensionado.xaml.cs">
+      <DependentUpon>BusquedaListaPensionado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\Reportes\XtraDecreto_Docente_temporal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\Reportes\XtraDecreto_Docente_temporal.Designer.cs">
+      <DependentUpon>XtraDecreto_Docente_temporal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_AvisoNoDocente.xaml.cs">
+      <DependentUpon>Dial_AvisoNoDocente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_CambioEstadoSolicitudPJ.xaml.cs">
+      <DependentUpon>Dial_CambioEstadoSolicitudPJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_Config_CitasMostrador.xaml.cs">
+      <DependentUpon>Dial_Config_CitasMostrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_confirmacion_AprobacionSeguroFunerario.xaml.cs">
+      <DependentUpon>Dial_confirmacion_AprobacionSeguroFunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_confirmacion_cambio_estado_sf.xaml.cs">
+      <DependentUpon>Dial_confirmacion_cambio_estado_sf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\dial_datosListaPensionBeneficio_.xaml.cs">
+      <DependentUpon>dial_datosListaPensionBeneficio_.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_Declinar_SeguroFunerario.xaml.cs">
+      <DependentUpon>Dial_Declinar_SeguroFunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_DeseaNotificarFallecido.xaml.cs">
+      <DependentUpon>Dial_DeseaNotificarFallecido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_empresasrecurrentes_01.xaml.cs">
+      <DependentUpon>Dial_empresasrecurrentes_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_NoExisteFechaFallecimiento.xaml.cs">
+      <DependentUpon>Dial_NoExisteFechaFallecimiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_ReporteDatosFellecidos.xaml.cs">
+      <DependentUpon>Dial_ReporteDatosFellecidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_Seleccion_02.xaml.cs">
+      <DependentUpon>Dial_Seleccion_02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_Seleccion_Pension_Dsicapacidad.xaml.cs">
+      <DependentUpon>Dial_Seleccion_Pension_Dsicapacidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_ViewImagen.xaml.cs">
+      <DependentUpon>Dial_ViewImagen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\ItemConeccionServidor.xaml.cs">
+      <DependentUpon>ItemConeccionServidor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\ItemRaiting.xaml.cs">
+      <DependentUpon>ItemRaiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\item_Visitas_Mostrador.xaml.cs">
+      <DependentUpon>item_Visitas_Mostrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\seleccion_impresion_cambio_estado_sf.xaml.cs">
+      <DependentUpon>seleccion_impresion_cambio_estado_sf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Win_Busqueda_Personal_Estandar.xaml.cs">
+      <DependentUpon>Win_Busqueda_Personal_Estandar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_contactos.xaml.cs">
+      <DependentUpon>win_contactos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_contenedor_estadistica.xaml.cs">
+      <DependentUpon>win_contenedor_estadistica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_datos_listadopensionbeneficio.xaml.cs">
+      <DependentUpon>win_datos_listadopensionbeneficio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_direccion.xaml.cs">
+      <DependentUpon>win_direccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Class\OrdenGrid_Busqueda_Solicitud_PJ.cs" />
+    <Compile Include="Objs\Controles\Dialogos\win_mostrar_promedio_salarial.xaml.cs">
+      <DependentUpon>win_mostrar_promedio_salarial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Win_nota.xaml.cs">
+      <DependentUpon>Win_nota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_seleccion_ejes_reporte_estadistica.xaml.cs">
+      <DependentUpon>win_seleccion_ejes_reporte_estadistica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\win_seleccion_requisitos_segurofunerario.xaml.cs">
+      <DependentUpon>win_seleccion_requisitos_segurofunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\ListadoTrabajos.xaml.cs">
+      <DependentUpon>ListadoTrabajos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\ListaPensionadosBeneficio.xaml.cs">
+      <DependentUpon>ListaPensionadosBeneficio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Portadas\ItemExisteSeguroFunerario.xaml.cs">
+      <DependentUpon>ItemExisteSeguroFunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Portadas\us_estadistica_general.xaml.cs">
+      <DependentUpon>us_estadistica_general.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\ReitingControl.xaml.cs">
+      <DependentUpon>ReitingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Asistentes\paso_01_seleccion_parametros.xaml.cs">
+      <DependentUpon>paso_01_seleccion_parametros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Asistentes\win_dial_sel_estadistica_sf.xaml.cs">
+      <DependentUpon>win_dial_sel_estadistica_sf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_SeguroFunerarioListado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_SeguroFunerarioListado.Designer.cs">
+      <DependentUpon>Xtra_SeguroFunerarioListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_sf_listado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_sf_listado.Designer.cs">
+      <DependentUpon>Xtra_sf_listado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\us_cambiar_estado_pagado.xaml.cs">
+      <DependentUpon>us_cambiar_estado_pagado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\us_segurofunerario_aprobacion.xaml.cs">
+      <DependentUpon>us_segurofunerario_aprobacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_busquedaDependientes.xaml.cs">
+      <DependentUpon>us_busquedaDependientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Discapacidad\us_Busqueda_Solicitudes_PJ.xaml.cs">
+      <DependentUpon>us_Busqueda_Solicitudes_PJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_formulario_sobrevivencia.xaml.cs">
+      <DependentUpon>us_formulario_sobrevivencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_fallecidos_nomina.xaml.cs">
+      <DependentUpon>us_fallecidos_nomina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_notificacionFallecimiento.xaml.cs">
+      <DependentUpon>us_notificacionFallecimiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_CitasAtension.xaml.cs">
+      <DependentUpon>us_CitasAtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_AnalisisDecreto.xaml.cs">
+      <DependentUpon>Dial_AnalisisDecreto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_AvisoExclusion.xaml.cs">
+      <DependentUpon>Dial_AvisoExclusion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_ExisteDocente.xaml.cs">
+      <DependentUpon>Dial_ExisteDocente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_IndiqueSueldoDecreto.xaml.cs">
+      <DependentUpon>Dial_IndiqueSueldoDecreto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_SeleccionDecretoOpcion_01.xaml.cs">
+      <DependentUpon>Dial_SeleccionDecretoOpcion_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\Item_AtensionCliente.xaml.cs">
+      <DependentUpon>Item_AtensionCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Portadas\PortadaEstadistica.xaml.cs">
+      <DependentUpon>PortadaEstadistica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Portadas\PortadaMensaje.xaml.cs">
+      <DependentUpon>PortadaMensaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_citas.xaml.cs">
+      <DependentUpon>us_citas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_citasMonitoreo.xaml.cs">
+      <DependentUpon>us_citasMonitoreo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_CitasMotivos.xaml.cs">
+      <DependentUpon>us_CitasMotivos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_CitasUsuarios.xaml.cs">
+      <DependentUpon>us_CitasUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes_NotificacionExclucion.xaml.cs">
+      <DependentUpon>us_ConsultaDependientes_NotificacionExclucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\ItemNomina.xaml.cs">
+      <DependentUpon>ItemNomina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\ItemSelect.xaml.cs">
+      <DependentUpon>ItemSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_BuscarPersonas.xaml.cs">
+      <DependentUpon>us_BuscarPersonas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_DocenteEsRenunciaSobrev.xaml.cs">
+      <DependentUpon>Dial_DocenteEsRenunciaSobrev.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_Espera.xaml.cs">
+      <DependentUpon>Dial_Espera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\Dial_SeleccionPagina_01.xaml.cs">
+      <DependentUpon>Dial_SeleccionPagina_01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\EditText.xaml.cs">
+      <DependentUpon>EditText.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\ERBuscarPersona.xaml.cs">
+      <DependentUpon>ERBuscarPersona.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\ERSuplidormini.xaml.cs">
+      <DependentUpon>ERSuplidormini.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\esperacircular.xaml.cs">
+      <DependentUpon>esperacircular.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\item_requisitos.xaml.cs">
+      <DependentUpon>item_requisitos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\MarcaAgua.xaml.cs">
+      <DependentUpon>MarcaAgua.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\ReportSelectDocente.xaml.cs">
+      <DependentUpon>ReportSelectDocente.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Screenw.xaml.cs">
+      <DependentUpon>Screenw.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\us_BuscarDocente.xaml.cs">
+      <DependentUpon>us_BuscarDocente.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes.xaml.cs">
+      <DependentUpon>us_ConsultaDependientes.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes_LimitePension.xaml.cs">
+      <DependentUpon>us_ConsultaDependientes_LimitePension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_contactos.xaml.cs">
+      <DependentUpon>us_contactos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\us_direcciones.xaml.cs">
+      <DependentUpon>us_direcciones.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\us_indicadores.xaml.cs">
+      <DependentUpon>us_indicadores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_ListaExcluidos.xaml.cs">
+      <DependentUpon>us_ListaExcluidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\us_MantenimientoListadoDecreto.xaml.cs">
+      <DependentUpon>us_MantenimientoListadoDecreto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\us_Mantenimiento_Decreto.xaml.cs">
+      <DependentUpon>us_Mantenimiento_Decreto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Discapacidad\us_mantenimiento_procesos.xaml.cs">
+      <DependentUpon>us_mantenimiento_procesos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\us_marca_agua_fallecido.xaml.cs">
+      <DependentUpon>us_marca_agua_fallecido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_nominas.xaml.cs">
+      <DependentUpon>us_nominas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\us_pensionsobrev_vista.xaml.cs">
+      <DependentUpon>us_pensionsobrev_vista.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\us_prestamo.xaml.cs">
+      <DependentUpon>us_prestamo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\SeguroFunerario\us_Proceso_SeguroFunerario.xaml.cs">
+      <DependentUpon>us_Proceso_SeguroFunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\us_ScanActas.xaml.cs">
+      <DependentUpon>us_ScanActas.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\us_VisorDocente.xaml.cs">
+      <DependentUpon>us_VisorDocente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Discapacidad\us_vista_solicitudes_pj.xaml.cs">
+      <DependentUpon>us_vista_solicitudes_pj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Sobrevivencia\win_AgregarPersona.xaml.cs">
+      <DependentUpon>win_AgregarPersona.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\win_cambiar_clave.xaml.cs">
+      <DependentUpon>win_cambiar_clave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\win_citasAtencion.xaml.cs">
+      <DependentUpon>win_citasAtencion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Visitas\Win_citas_mostrador.xaml.cs">
+      <DependentUpon>Win_citas_mostrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\win_comentarios.xaml.cs">
+      <DependentUpon>win_comentarios.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Win_Docente_Detalle.xaml.cs">
+      <DependentUpon>Win_Docente_Detalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\win_espera_elementos_estaticos.xaml.cs">
+      <DependentUpon>win_espera_elementos_estaticos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Win_IncluirPersonal.xaml.cs">
+      <DependentUpon>Win_IncluirPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\win_MantenimientoContactoDireccion.xaml.cs">
+      <DependentUpon>win_MantenimientoContactoDireccion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\win_mantenimientoDocente.xaml.cs">
+      <DependentUpon>win_mantenimientoDocente.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Win_ReentrarClave.xaml.cs">
+      <DependentUpon>Win_ReentrarClave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\win_requisitosseleccion.xaml.cs">
+      <DependentUpon>win_requisitosseleccion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\wus_contacto.xaml.cs">
+      <DependentUpon>wus_contacto.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\wus_direccion.xaml.cs">
+      <DependentUpon>wus_direccion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Dialogos\wus_selecciondocentereporte.xaml.cs">
+      <DependentUpon>wus_selecciondocentereporte.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\ActasDocente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\AseguradoresRecurrentes.cs" />
+    <Compile Include="Objs\Docentes\BeneficiariosSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\ConverToDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Decreto.cs" />
+    <Compile Include="Objs\Docentes\DecretoAnalisis.cs" />
+    <Compile Include="Objs\Docentes\DocenteListaPensionBeneficio.cs" />
+    <Compile Include="Objs\Docentes\Docentes_Base.cs" />
+    <Compile Include="Objs\Docentes\Docente_Base.cs" />
+    <Compile Include="Objs\Docentes\Docente_Decreto.cs" />
+    <Compile Include="Objs\Docentes\Docente_En_Decreto.cs" />
+    <Compile Include="Objs\Docentes\Docente_Familia.cs" />
+    <Compile Include="Objs\Docentes\Docente_Incluir.cs" />
+    <Compile Include="Objs\Docentes\Docente_Solicitud.cs" />
+    <Compile Include="Objs\Docentes\Docentes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\EntidadBeneficio.cs" />
+    <Compile Include="Objs\Docentes\EnumDocumentos.cs" />
+    <Compile Include="Objs\Docentes\EstadoBeneficio.cs" />
+    <Compile Include="Objs\Docentes\EstadoDecreto.cs" />
+    <Compile Include="Objs\Docentes\EstadoPJ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\EstadosSolicitudPJ.cs" />
+    <Compile Include="Objs\Docentes\Familiares.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\GrupoTiempos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\GrupoTiempoSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\ImpresionDocumento.cs" />
+    <Compile Include="Objs\Docentes\IngresoDescuento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\ListaPensionadoenBeneficio.cs" />
+    <Compile Include="Objs\Docentes\Nomina.cs" />
+    <Compile Include="Objs\Docentes\NotificadosFallecidos.cs" />
+    <Compile Include="Objs\Docentes\OrigenBeneficio.cs" />
+    <Compile Include="Objs\Docentes\OrigenSiniestro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\PagoDetalle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Pagos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Pasospj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\PasospjAsignados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Presidentes.cs" />
+    <Compile Include="Objs\Docentes\Prestamo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\RenunciaSobrevivencia.cs" />
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario_PJ16.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario_PJ16.Designer.cs">
+      <DependentUpon>Xtra_Formulario_SeguroFunerario_PJ16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Certificacion_Discapacidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Certificacion_Discapacidad.Designer.cs">
+      <DependentUpon>Xtra_Certificacion_Discapacidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario.Designer.cs">
+      <DependentUpon>Xtra_Formulario_SeguroFunerario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ListadoIngresosEgresos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ListadoIngresosEgresos.Designer.cs">
+      <DependentUpon>Xtra_ListadoIngresosEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Listado_Solicitud_PJ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Listado_Solicitud_PJ.Designer.cs">
+      <DependentUpon>Xtra_Listado_Solicitud_PJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_AnalisisDecreto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_AnalisisDecreto.Designer.cs">
+      <DependentUpon>Xtra_AnalisisDecreto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Certificacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Certificacion.Designer.cs">
+      <DependentUpon>Xtra_Certificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocentePesionDiscap_Beneficio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocentePesionDiscap_Beneficio.Designer.cs">
+      <DependentUpon>Xtra_DocentePesionDiscap_Beneficio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Docente_Fallecidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Docente_Fallecidos.Designer.cs">
+      <DependentUpon>Xtra_Docente_Fallecidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_LimiteEdad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_LimiteEdad.Designer.cs">
+      <DependentUpon>Xtra_LimiteEdad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ListadoExcluidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ListadoExcluidos.Designer.cs">
+      <DependentUpon>Xtra_ListadoExcluidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Notificacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Notificacion.Designer.cs">
+      <DependentUpon>Xtra_Notificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Docente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Docente.Designer.cs">
+      <DependentUpon>Xtra_Docente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ComentarioDocente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ComentarioDocente.Designer.cs">
+      <DependentUpon>Xtra_ComentarioDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\Reportes\Xtra_DecretoDocentes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Controles\Decreto\Reportes\Xtra_DecretoDocentes.Designer.cs">
+      <DependentUpon>Xtra_DecretoDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Proyeccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_Proyeccion.Designer.cs">
+      <DependentUpon>Xtra_Proyeccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_RetroActivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_RetroActivo.Designer.cs">
+      <DependentUpon>Xtra_RetroActivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteBenPlanf.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteBenPlanf.Designer.cs">
+      <DependentUpon>Xtra_DocenteBenPlanf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteDependientes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteDependientes.Designer.cs">
+      <DependentUpon>Xtra_DocenteDependientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocentePaso.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocentePaso.Designer.cs">
+      <DependentUpon>Xtra_DocentePaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteSolicitudPJ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_DocenteSolicitudPJ.Designer.cs">
+      <DependentUpon>Xtra_DocenteSolicitudPJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_PostActivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_PostActivo.Designer.cs">
+      <DependentUpon>Xtra_PostActivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ReporteMayores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_ReporteMayores.Designer.cs">
+      <DependentUpon>Xtra_ReporteMayores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Requisitos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\RequisitosAsignadorSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\RequisitosAsignados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\RequisitosSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\SeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\SeguroFunerarioEstado.cs" />
+    <Compile Include="Objs\Docentes\SeguroFunerarioEstados.cs" />
+    <Compile Include="Objs\Docentes\Solicitante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\SolicitanteSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\SolicitudPJ.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Tanda.cs" />
+    <Compile Include="Objs\Docentes\TipoDocente.cs" />
+    <Compile Include="Objs\Docentes\TipoDocumento.cs" />
+    <Compile Include="Objs\Docentes\TipoMuerte.cs" />
+    <Compile Include="Objs\Docentes\TipoSiniestros.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\TipoSolicitante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Decreto_Docente.cs" />
+    <Compile Include="Objs\Docentes\tipos\CalculoNomina.cs" />
+    <Compile Include="Objs\Docentes\tipos\tcuentanomina.cs" />
+    <Compile Include="Objs\Docentes\tipos\tdatosfallecimiento.cs" />
+    <Compile Include="Objs\Docentes\tipos\TDecreto.cs" />
+    <Compile Include="Objs\Docentes\tipos\TDecretoDocente.cs" />
+    <Compile Include="Objs\Docentes\tipos\tdocente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tdocenteactas.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tdocumentosc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\testadoasignado.cs" />
+    <Compile Include="Objs\Docentes\tipos\testadopj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\testadossolicitudpj.cs" />
+    <Compile Include="Objs\Docentes\tipos\TFamiliares.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TGrupoTiempos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\THistoricoLaboral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TiempoSolicitudSeguroFunerario.cs" />
+    <Compile Include="Objs\Docentes\tipos\TiemposSolicitud.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\timpresiondocumento.cs" />
+    <Compile Include="Objs\Docentes\tipos\tlabora.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tlistadopensionadosenbeneficio.cs" />
+    <Compile Include="Objs\Docentes\tipos\TNomina.cs" />
+    <Compile Include="Objs\Docentes\tipos\TNotificadosFallecidos.cs" />
+    <Compile Include="Objs\Docentes\tipos\TPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TPasospj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TPasospjAsignados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tpersonaRelacionada.cs" />
+    <Compile Include="Objs\Docentes\tipos\tpresidente.cs" />
+    <Compile Include="Objs\Docentes\tipos\trenunciasobrevivencia.cs" />
+    <Compile Include="Objs\Docentes\tipos\tRequesitosAsignados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\trequisitos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TSolicitante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tsolicitudfunenario.cs" />
+    <Compile Include="Objs\Docentes\tipos\tsolicitudpj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\ttiposiniestro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\TPagoDetalle.cs" />
+    <Compile Include="Objs\Controles\win_DocenteRenunciaSobrev.xaml.cs">
+      <DependentUpon>win_DocenteRenunciaSobrev.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\Docente.cs" />
+    <Compile Include="Objs\Controles\SeguroFunerario\us_vista_solicitud_segurofunerario.xaml.cs">
+      <DependentUpon>us_vista_solicitud_segurofunerario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\ttanda.cs" />
+    <Compile Include="Objs\Docentes\Reportes\Xtra_SeguroFunerario_Resultado_01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Objs\Docentes\Reportes\Xtra_SeguroFunerario_Resultado_01.Designer.cs">
+      <DependentUpon>Xtra_SeguroFunerario_Resultado_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\Docentes\tipos\tvistas\tsolicitudfunenario_view.cs" />
+    <Compile Include="Objs\us_marca_agua_nodocente.xaml.cs">
+      <DependentUpon>us_marca_agua_nodocente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Objs\us_marca_deagua_notificado.xaml.cs">
+      <DependentUpon>us_marca_deagua_notificado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SIC.cs" />
+    <Compile Include="UI\areatrabajo.xaml.cs">
+      <DependentUpon>areatrabajo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\areatrabajo_Visitas.xaml.cs">
+      <DependentUpon>areatrabajo_Visitas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MenuPrincipal.xaml.cs">
+      <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\areatrabajo_Configuracion.xaml.cs">
+      <DependentUpon>areatrabajo_Configuracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Presentacion.xaml.cs">
+      <DependentUpon>Presentacion.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Objs\Controles\BusquedaListaPensionado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_AvisoNoDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_CambioEstadoSolicitudPJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_Config_CitasMostrador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_confirmacion_AprobacionSeguroFunerario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_confirmacion_cambio_estado_sf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\dial_datosListaPensionBeneficio_.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_Declinar_SeguroFunerario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_DeseaNotificarFallecido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_empresasrecurrentes_01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_NoExisteFechaFallecimiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_ReporteDatosFellecidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_Seleccion_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_Seleccion_Pension_Dsicapacidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_ViewImagen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\ItemConeccionServidor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\ItemRaiting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\item_Visitas_Mostrador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\seleccion_impresion_cambio_estado_sf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Win_Busqueda_Personal_Estandar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_contactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_contenedor_estadistica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_datos_listadopensionbeneficio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_direccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_mostrar_promedio_salarial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Win_nota.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_seleccion_ejes_reporte_estadistica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\win_seleccion_requisitos_segurofunerario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\ListadoTrabajos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\ListaPensionadosBeneficio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Portadas\ItemExisteSeguroFunerario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Portadas\us_estadistica_general.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\ReitingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\Asistentes\paso_01_seleccion_parametros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\Asistentes\win_dial_sel_estadistica_sf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\us_cambiar_estado_pagado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\us_segurofunerario_aprobacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_busquedaDependientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Discapacidad\us_Busqueda_Solicitudes_PJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_formulario_sobrevivencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_fallecidos_nomina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_notificacionFallecimiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_CitasAtension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_AnalisisDecreto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_AvisoExclusion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_ExisteDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_IndiqueSueldoDecreto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_SeleccionDecretoOpcion_01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\Item_AtensionCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Portadas\PortadaEstadistica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Portadas\PortadaMensaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_citas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_citasMonitoreo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_CitasMotivos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_CitasUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes_NotificacionExclucion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\ItemNomina.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\ItemSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_BuscarPersonas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_DocenteEsRenunciaSobrev.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_Espera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\Dial_SeleccionPagina_01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\EditText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\ERBuscarPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\ERSuplidormini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\esperacircular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\item_requisitos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\MarcaAgua.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\ReportSelectDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Screenw.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_BuscarDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_ConsultaDependientes_LimitePension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_contactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_direcciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\us_indicadores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_ListaExcluidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Decreto\us_MantenimientoListadoDecreto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Decreto\us_Mantenimiento_Decreto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Discapacidad\us_mantenimiento_procesos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_marca_agua_fallecido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_nominas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\us_pensionsobrev_vista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_prestamo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\us_Proceso_SeguroFunerario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\us_ScanActas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\us_VisorDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Discapacidad\us_vista_solicitudes_pj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Sobrevivencia\win_AgregarPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_cambiar_clave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\win_citasAtencion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Visitas\Win_citas_mostrador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_comentarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Win_Docente_Detalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_espera_elementos_estaticos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\Win_IncluirPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_MantenimientoContactoDireccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_mantenimientoDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Win_ReentrarClave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Objs\Controles\win_requisitosseleccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\wus_contacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\wus_direccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\Dialogos\wus_selecciondocentereporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\win_DocenteRenunciaSobrev.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\Controles\SeguroFunerario\us_vista_solicitud_segurofunerario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\us_marca_agua_nodocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Objs\us_marca_deagua_notificado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\areatrabajo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\areatrabajo_Visitas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\inicio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UI\inicio.xaml.cs">
+      <DependentUpon>inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UI\MenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\areatrabajo_Configuracion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Presentacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Objs\Citas\Reports\XtraTick.resx">
+      <DependentUpon>XtraTick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Controles\Decreto\Reportes\XtraDecreto_Docente_temporal.resx">
+      <DependentUpon>XtraDecreto_Docente_temporal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_SeguroFunerarioListado.resx">
+      <DependentUpon>Xtra_SeguroFunerarioListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Controles\SeguroFunerario\Reportes\Xtra_sf_listado.resx">
+      <DependentUpon>Xtra_sf_listado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario_PJ16.resx">
+      <DependentUpon>Xtra_Formulario_SeguroFunerario_PJ16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Certificacion_Discapacidad.resx">
+      <DependentUpon>Xtra_Certificacion_Discapacidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Formulario_SeguroFunerario.resx">
+      <DependentUpon>Xtra_Formulario_SeguroFunerario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_ListadoIngresosEgresos.resx">
+      <DependentUpon>Xtra_ListadoIngresosEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Listado_Solicitud_PJ.resx">
+      <DependentUpon>Xtra_Listado_Solicitud_PJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_AnalisisDecreto.resx">
+      <DependentUpon>Xtra_AnalisisDecreto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Certificacion.resx">
+      <DependentUpon>Xtra_Certificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_DocentePesionDiscap_Beneficio.resx">
+      <DependentUpon>Xtra_DocentePesionDiscap_Beneficio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Docente_Fallecidos.resx">
+      <DependentUpon>Xtra_Docente_Fallecidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_LimiteEdad.resx">
+      <DependentUpon>Xtra_LimiteEdad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_ListadoExcluidos.resx">
+      <DependentUpon>Xtra_ListadoExcluidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Notificacion.resx">
+      <DependentUpon>Xtra_Notificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Docente.resx">
+      <DependentUpon>Xtra_Docente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_ComentarioDocente.resx">
+      <DependentUpon>Xtra_ComentarioDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Controles\Decreto\Reportes\Xtra_DecretoDocentes.resx">
+      <DependentUpon>Xtra_DecretoDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_Proyeccion.resx">
+      <DependentUpon>Xtra_Proyeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_RetroActivo.resx">
+      <DependentUpon>Xtra_RetroActivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_DocenteBenPlanf.resx">
+      <DependentUpon>Xtra_DocenteBenPlanf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_DocenteDependientes.resx">
+      <DependentUpon>Xtra_DocenteDependientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_DocentePaso.resx">
+      <DependentUpon>Xtra_DocentePaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_DocenteSolicitudPJ.resx">
+      <DependentUpon>Xtra_DocenteSolicitudPJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_PostActivo.resx">
+      <DependentUpon>Xtra_PostActivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_ReporteMayores.resx">
+      <DependentUpon>Xtra_ReporteMayores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objs\Docentes\Reportes\Xtra_SeguroFunerario_Resultado_01.resx">
+      <DependentUpon>Xtra_SeguroFunerario_Resultado_01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Empresa.Citas.TCitasVisitas.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.DecretoAnalisis.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.Docente.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.SeguroFunerario.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.SolicitudPJ.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.tdocente.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.tdocentes.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.TFamiliares.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.TPagoDetalle.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.tsolicitudfunenario.datasource" />
+    <None Include="Properties\DataSources\Empresa.Docente.tsolicitudpj.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="SIC_1_TemporaryKey.pfx" />
+    <None Include="SIC_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objs\Comun\imgs\aadd_32.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_24.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_24_Edit.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_32.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_32_Atach.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_48.png" />
+    <Resource Include="Objs\Comun\imgs\bgapp_01_ext01.jpg" />
+    <Resource Include="Objs\Comun\imgs\cancel_32.png" />
+    <Resource Include="Objs\Comun\imgs\clock_16.png" />
+    <Resource Include="Objs\Comun\imgs\close_2_32.png" />
+    <Resource Include="Objs\Comun\imgs\close_b_24.png" />
+    <Resource Include="Objs\Comun\imgs\ddelete_32.png" />
+    <Resource Include="Objs\Comun\imgs\diskette_24.png" />
+    <Resource Include="Objs\Comun\imgs\diskette_32.png" />
+    <Resource Include="Objs\Comun\imgs\document_32.png" />
+    <Resource Include="Objs\Comun\imgs\document_up_24.png" />
+    <Resource Include="Objs\Comun\imgs\els_32.png" />
+    <Resource Include="Objs\Comun\imgs\files_32.png" />
+    <Resource Include="Objs\Comun\imgs\files_back_32.png" />
+    <Resource Include="Objs\Comun\imgs\find_last_a_32.png" />
+    <Resource Include="Objs\Comun\imgs\find_last_b_32.png" />
+    <Resource Include="Objs\Comun\imgs\frente_ina.png" />
+    <Resource Include="Objs\Comun\imgs\group_32.png" />
+    <Resource Include="Objs\Comun\imgs\group_48.png" />
+    <Resource Include="Objs\Comun\imgs\home_32.png" />
+    <Resource Include="Objs\Comun\imgs\list_add_32.png" />
+    <Resource Include="Objs\Comun\imgs\logo_ina.png" />
+    <Resource Include="Objs\Comun\imgs\mail_down_32.png" />
+    <Resource Include="Objs\Comun\imgs\minister_32.png" />
+    <Resource Include="Objs\Comun\imgs\nnext_32.png" />
+    <Resource Include="Objs\Comun\imgs\notebook_48.png" />
+    <Resource Include="Objs\Comun\imgs\ok_24.png" />
+    <Resource Include="Objs\Comun\imgs\paste_32.png" />
+    <Resource Include="Objs\Comun\imgs\pen_16.png" />
+    <Resource Include="Objs\Comun\imgs\printer_32.png" />
+    <Resource Include="Objs\Comun\imgs\report_48.png" />
+    <Resource Include="Objs\Comun\imgs\star_32.png" />
+    <Resource Include="Objs\Comun\imgs\telephone_32.png" />
+    <Resource Include="Objs\Comun\imgs\track_changes_32.png" />
+    <Resource Include="Objs\Comun\imgs\write_24.png" />
+    <Resource Include="Objs\Comun\imgs\decreto_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Objs\Comun\imgs\writer_close_48_money.png" />
+    <Resource Include="Objs\Comun\imgs\writer_close_48.png" />
+    <Resource Include="Objs\Comun\imgs\writer_close_32.png" />
+    <Resource Include="Objs\Comun\imgs\bar_chart_ok_48.png" />
+    <Resource Include="Objs\Comun\imgs\reload_48.png" />
+    <Resource Include="Objs\Comun\imgs\NoDocente.png" />
+    <Resource Include="Objs\Comun\imgs\wizard_48.png" />
+    <Resource Include="Objs\Comun\imgs\write_48.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_ok_32.png" />
+    <Resource Include="Objs\Comun\imgs\windows_config_48.png" />
+    <Resource Include="Objs\Comun\imgs\personal_card_16.png" />
+    <Resource Include="Objs\Comun\imgs\switch_off_refresh_32.png" />
+    <Resource Include="Objs\Comun\imgs\views_ok_48.png" />
+    <Resource Include="Objs\Comun\imgs\views_ok_32.png" />
+    <Resource Include="Objs\Comun\imgs\gear_32.png" />
+    <Resource Include="comentario.txt" />
+    <Content Include="db.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Objs\Comun\imgs\EstadoAmarrillo.png" />
+    <Resource Include="Objs\Comun\imgs\EstadoMarron.png" />
+    <Resource Include="Objs\Comun\imgs\EstadoRojo.png" />
+    <Resource Include="Objs\Comun\imgs\EstadoVerde.png" />
+    <Resource Include="Objs\Comun\imgs\star_32_n.png" />
+    <Resource Include="Objs\Comun\imgs\switch_off_help_48.png" />
+    <Resource Include="Objs\Comun\imgs\companies_ok_48.png" />
+    <Resource Include="Objs\Comun\imgs\server_reload_24.png" />
+    <Resource Include="Objs\Comun\imgs\views_refresh_32.png" />
+    <Resource Include="Objs\Comun\imgs\notepad_zoom_48.ico" />
+    <Resource Include="Objs\Comun\imgs\notepad_48.png" />
+    <Resource Include="Objs\Comun\imgs\monitor_32.png" />
+    <Resource Include="Objs\Comun\imgs\monitor_48.png" />
+    <Resource Include="Objs\Docentes\Reportes\fallecido_girado_opaci60.png" />
+    <Resource Include="Objs\Comun\imgs\Textura_02.png" />
+    <Resource Include="Objs\Comun\imgs\Textura_01.png" />
+    <Resource Include="Objs\Comun\imgs\american_cancel_48.png" />
+    <Resource Include="Objs\Comun\imgs\american_ok_32.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_zoom_32.png" />
+    <Resource Include="Objs\Comun\imgs\administrator_config_32.png" />
+    <Resource Include="Objs\Comun\imgs\session_48.png" />
+    <Resource Include="Objs\Comun\imgs\payment_help_48.png" />
+    <Resource Include="Objs\Comun\imgs\hijack_48.png" />
+    <Resource Include="Objs\Comun\imgs\refresh_32.png" />
+    <Resource Include="Objs\Comun\imgs\Notificacion_48.png" />
+    <Resource Include="Objs\Comun\imgs\home_write_48.png" />
+    <Resource Include="Objs\Comun\imgs\clients_78.png" />
+    <Resource Include="Objs\Comun\imgs\clients_fav_128.png" />
+    <Resource Include="Objs\Comun\imgs\clients_search_48.png" />
+    <Resource Include="Objs\Comun\imgs\software_ok_48.png" />
+    <Resource Include="Objs\Comun\imgs\app_bk_01.jpg" />
+    <Resource Include="Objs\Comun\imgs\american_cancel_32.png" />
+    <Resource Include="Objs\Comun\imgs\clients_search_48_02.png" />
+    <Resource Include="Objs\Comun\imgs\help_48.png" />
+    <Resource Include="Objs\Comun\imgs\document_cancel_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="db.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Charts.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.CodeParser.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.PivotGrid.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.RichEdit.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Core.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Docking.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Grid.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Grid.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Layout.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Mvvm.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Printing.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Printing.v13.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Ribbon.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraBars.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraCharts.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraCharts.v13.1.Extensions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraCharts.v13.1.Wizard">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraEditors.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraLayout.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraNavBar.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraPivotGrid.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraRichEdit.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraTreeList.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v13.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Edm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.OData">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Services.Client">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="PresentationUI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="RegistrosEventos\RegistrosEventos.csproj">
+      <Project>{4cd3f866-e8ce-4297-9cb6-877afd49c983}</Project>
+      <Name>RegistrosEventos</Name>
+    </ProjectReference>
+    <ProjectReference Include="USeguridad\USEGURIDAD.csproj">
+      <Project>{bd46900f-441c-4f69-956a-15cf7e108b35}</Project>
+      <Name>USEGURIDAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="Usuario\Usuario.csproj">
+      <Project>{2b7965fb-ef15-4c50-8db5-f4b8cb7b0489}</Project>
+      <Name>Usuario</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

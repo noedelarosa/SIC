@@ -1,0 +1,18 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SIC.Objs.Controles" 
+        x:Class="SIC.Objs.Controles.wus_contacto"
+        Title="Contactos" Height="163" 
+        
+        WindowState="Normal" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Width="467">
+    
+    <Grid>
+        <Button Content="Aceptar" x:Name="But_Aceptar" HorizontalAlignment="Left" Margin="27,96,0,0" VerticalAlignment="Top" Width="75" Click="But_Aceptar_Click"/>
+        <Button Content="Salir" x:Name="But_Salir" HorizontalAlignment="Left" Margin="107,96,0,0" VerticalAlignment="Top" Width="75" Click="But_Salir_Click"/>
+        <local:us_contactos x:Name="usc_contacto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+    
+</Window>

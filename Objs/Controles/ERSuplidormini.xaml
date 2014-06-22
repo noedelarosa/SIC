@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.ERSuplidormini"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             MinWidth="250" MaxHeight="300">
+    <Grid>
+        <StackPanel>
+            <TextBox Height="25" x:Name="Txt_Argumetno" PreviewKeyDown="Txt_Argumetno_PreviewKeyDown_1" PreviewKeyUp="Txt_Argumetno_PreviewKeyUp_1" KeyUp="Txt_Argumetno_KeyUp_1" />
+            <ListBox x:Name="Lis_resultado" Height="200" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" MouseDoubleClick="Lis_resultado_MouseDoubleClick_1" ItemsSource="{Binding}" DisplayMemberPath="Nombre" PreviewKeyDown="Lis_resultado_PreviewKeyDown_1" Visibility="Hidden" />
+        </StackPanel>
+        <ProgressBar x:Name="prg_progreso" IsIndeterminate="True" Visibility="Hidden" VerticalAlignment="Top" Height="30"/>
+    </Grid>
+</UserControl>

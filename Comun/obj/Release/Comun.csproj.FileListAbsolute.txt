@@ -1,0 +1,6 @@
+D:\INABIMA\SIC\Comun\obj\Release\Comun.csprojResolveAssemblyReference.cache
+D:\INABIMA\SIC\Comun\obj\Release\Controls\DateTimePlus.baml
+D:\INABIMA\SIC\Comun\obj\Release\Controls\DateTimePlus.g.cs
+D:\INABIMA\SIC\Comun\obj\Release\Empresa.Comun_MarkupCompile.cache
+D:\INABIMA\SIC\Comun\obj\Release\Empresa.Comun.g.resources
+D:\INABIMA\SIC\Comun\obj\Release\Empresa.Comun.dll.licenses

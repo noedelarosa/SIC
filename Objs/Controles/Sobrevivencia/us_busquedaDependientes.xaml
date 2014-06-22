@@ -1,0 +1,90 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" x:Class="SIC.Objs.Controles.us_busquedaDependientes" 
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <xcdg:DataGridCollectionViewSource x:Key="sourcedata" Source="{Binding}"></xcdg:DataGridCollectionViewSource>
+    </UserControl.Resources>
+    <Grid Background="#CEEFEFEF">
+        <Button HorizontalAlignment="Left" Click="But_Refresh_Copy_Click" x:Name="But_Refresh_Copy" Margin="10,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/notebook_48.png"/>
+                    <TextBlock Margin="5,5,10,0" Width="51"><Run Language="es-do" Text="Mostrar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <xcdg:DataGridControl x:Name="datagrid12" SelectionUnit="Row" ItemsSource="{Binding Source={StaticResource sourcedata}}"  AutoCreateColumns="False" NavigationBehavior="RowOnly" SelectionMode="Single" Margin="10,218,10,43">
+
+            <xcdg:DataGridControl.View>
+                <xcdg:TableflowView ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableflowView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow />
+                        </DataTemplate>
+                    </xcdg:TableflowView.Headers>
+
+                    <xcdg:TableflowView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl xcdg:TableView.CanScrollHorizontally="False" NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableflowView.FixedHeaders>
+
+                    <xcdg:TableflowView.Theme>
+                        <xcdg:AeroNormalColorTheme/>
+                    </xcdg:TableflowView.Theme>
+
+                </xcdg:TableflowView>
+            </xcdg:DataGridControl.View>
+
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="Cedula" Title="Cedula"/>
+                <xcdg:Column FieldName="Nombres" Title="Nombres"/>
+                <xcdg:Column FieldName="Apellidos" Title="Apellidos"/>
+                <xcdg:Column FieldName="Parentesco.Nombre" Title="Parentesco"/>
+                <xcdg:Column FieldName="EstadoBeneficio.Nombre" Title="Estado Beneficio"/>
+                <xcdg:Column FieldName="EsMasculinof" Title="Sexo"/>
+
+                <xcdg:Column FieldName="Docente.Cedula" Title="Docente Cédula"/>
+                <xcdg:Column FieldName="Docente.Nombres" Title="Docente Nombre"/>
+                <xcdg:Column FieldName="Docente.Apellidos" Title="Docente Apellidos"/>
+
+                <xcdg:Column FieldName="Tutor.Nombres" Title="Tutor Nombre"/>
+                <xcdg:Column FieldName="Tutor.Apellidos" Title="Tutor Apellidos"/>
+                <xcdg:Column FieldName="Tutor.Cedula" Title="Tutor Cédula"/>
+
+            </xcdg:DataGridControl.Columns>
+        </xcdg:DataGridControl>
+        <Grid Background="#FFDEDEDE" Margin="10,10,10,0" Height="203" VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" Margin="81,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1448" Height="25"><Run Text="Aplique el filtro en funci"/><Run Language="es-do" Text="ó"/><Run Text="n a los parametros seleccionado"/><Run Language="es-do" Text="s"/><Run Text=", puede introducir el Nombre Apellidos o cedula del beneficiario sin tomar en cuenta que sea tutor o dependiente."/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="448" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Busqueda Beneficiarios."/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/clients_search_48_02.png"/>
+
+            <Grid Height="75" Margin="81,91,10,0" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Language="es-do" Text="Nombres"/></TextBlock>
+                <TextBox x:Name="Txt_nombre" HorizontalAlignment="Left" Height="23" Margin="83,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"><Run Language="es-do" Text="Cedula"/></TextBlock>
+                <TextBox x:Name="Txt_cedulas" HorizontalAlignment="Left" Height="23" Margin="83,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+                <Border BorderBrush="Black" BorderThickness="1"/>
+            </Grid>
+
+
+            <Button HorizontalAlignment="Left"  x:Name="But_Buscar" Click="But_Buscar_Click"  Margin="81,0,0,4" Width="102" Height="28" VerticalAlignment="Bottom">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Buscar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B07107D-5868-4518-8461-7C3B02360885}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Empresa.Comun</RootNamespace>
+    <AssemblyName>Empresa.Comun</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConectionString">
+      <HintPath>..\M-TAF\Herramientas\lib\ConectionString.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Mvvm.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1.Wizard, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1.UI, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.Extensions, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\M-TAF\Herramientas\lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Seguridad">
+      <HintPath>..\M-TAF\Herramientas\lib\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="SSData">
+      <HintPath>..\M-TAF\Herramientas\lib\SSData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comun\BoolDosColoresConvert.cs" />
+    <Compile Include="Comun\BooleanSiNoConvert.cs" />
+    <Compile Include="Comun\BoolVisibleConvertNot.cs" />
+    <Compile Include="Comun\BoolVisibleConvert.cs" />
+    <Compile Include="Comun\Comentario.cs" />
+    <Compile Include="Comun\Comun.cs" />
+    <Compile Include="Comun\ContactoAsignado.cs" />
+    <Compile Include="Comun\Contactos.cs" />
+    <Compile Include="Comun\ConvertDataToAnoMes.cs" />
+    <Compile Include="Comun\ConvertDataToShortString.cs" />
+    <Compile Include="Comun\ConvertDateNoDefinido.cs" />
+    <Compile Include="Comun\ConvertDateToInfinity.cs" />
+    <Compile Include="Comun\ConvertDoubleToString.cs" />
+    <Compile Include="Comun\ConvertEnumRating.cs" />
+    <Compile Include="Comun\ConvertEstadoHistoricoVisitas.cs" />
+    <Compile Include="Comun\ConvertMesNombreAno.cs" />
+    <Compile Include="Comun\ConvertNaL.cs" />
+    <Compile Include="Comun\ConvertNoDefinidoNegativo.cs" />
+    <Compile Include="Comun\ConvertToDates.cs" />
+    <Compile Include="Comun\ConvertNegacionBool.cs" />
+    <Compile Include="Comun\EnviarEmail.cs" />
+    <Compile Include="Comun\EstadoPago.cs" />
+    <Compile Include="Comun\Porciento4ColoresConvert.cs" />
+    <Compile Include="Comun\DateToStringConvert.cs" />
+    <Compile Include="Comun\DecimalTo4digitosx100.cs" />
+    <Compile Include="Comun\delegates.cs" />
+    <Compile Include="Comun\Direccion.cs" />
+    <Compile Include="Comun\DireccionAsignada.cs" />
+    <Compile Include="Comun\Direcciones.cs" />
+    <Compile Include="Comun\EdadToColorbgConvert.cs" />
+    <Compile Include="Comun\HdError.cs" />
+    <Compile Include="Comun\Intefaces\IFirma.cs" />
+    <Compile Include="Comun\Municipio.cs" />
+    <Compile Include="Comun\numlet.cs" />
+    <Compile Include="Comun\Parentesco.cs" />
+    <Compile Include="Comun\Provincia.cs" />
+    <Compile Include="Comun\Sector.cs" />
+    <Compile Include="Comun\Server.cs" />
+    <Compile Include="Comun\Suplidor.cs" />
+    <Compile Include="Comun\SuplidorRecurrente.cs" />
+    <Compile Include="Comun\TipoDireccion.cs" />
+    <Compile Include="Comun\Tipos\NumeroLetraAZ.cs" />
+    <Compile Include="Comun\Tipos\tbasepersona.cs" />
+    <Compile Include="Comun\Tipos\TComentario.cs" />
+    <Compile Include="Comun\Tipos\tcontacto.cs" />
+    <Compile Include="Comun\Tipos\TDireccion.cs" />
+    <Compile Include="Comun\Tipos\TDireccionAsignada.cs" />
+    <Compile Include="Comun\Tipos\tdireccioncontacto.cs" />
+    <Compile Include="Comun\Tipos\TEntidaBeneficiaria.cs" />
+    <Compile Include="Comun\Tipos\TEstandar.cs" />
+    <Compile Include="Comun\Tipos\TMunicipio.cs" />
+    <Compile Include="Comun\Tipos\TParentesco.cs" />
+    <Compile Include="Comun\Tipos\TProvincia.cs" />
+    <Compile Include="Comun\Tipos\TSector.cs" />
+    <Compile Include="Comun\Tipos\TSuplidor.cs" />
+    <Compile Include="Comun\Unidades_LLaves.cs" />
+    <Compile Include="Comun\Validacion.cs" />
+    <Compile Include="Comun\ValidacionDeContenido.cs" />
+    <Compile Include="Comun\valores_punto_axial.cs" />
+    <Compile Include="Comun\ViewReportes.cs" />
+    <Compile Include="Comun\WorkImage.cs" />
+    <Compile Include="Comun\__Recuerso_IDS.cs" />
+    <Compile Include="Comun\__tipo_recurso_ids.cs" />
+    <Compile Include="Controls\DateTimePlus.xaml.cs">
+      <DependentUpon>DateTimePlus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Comun\Dial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\DateTimePlus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

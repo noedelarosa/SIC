@@ -1,0 +1,80 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Comun="clr-namespace:Empresa.Comun;assembly=Empresa.Comun" x:Class="SIC.Objs.Controles.Item_AtensionCliente" 
+             mc:Ignorable="d" Height="86" Width="651" x:Name="Item_AtensionCliente_control" FontFamily="Microsoft Sans Serif">
+
+    <UserControl.Resources>
+        <Comun:ConvertEstadoHistoricoVisitas x:Key="ConvertEstadoHistoricoVisitas"/>
+    </UserControl.Resources>
+
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEAEAEA" Offset="0"/>
+            <GradientStop Color="#FFE8E8E8" Offset="1"/>
+            <GradientStop Color="#FFFEFEFE" Offset="0.803"/>
+            <GradientStop Color="#FFFBFBFB" Offset="0.257"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Grid>
+
+        <Grid Margin="518,0,0,0" Opacity="0.3">
+            <Grid >
+                <Grid.Background>
+                    <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/Textura_01.png" Stretch="None"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+
+        <Grid Margin="10,10,0,0" Height="66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71">
+            <Border BorderBrush="#FF838383" BorderThickness="1"/>
+            <Image HorizontalAlignment="Left" Source="{Binding Cita.Visitante.AImagen, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}"  Height="66" Margin="0,0,-7,0" VerticalAlignment="Top" Width="69" Stretch="UniformToFill"/>
+        </Grid>
+
+        <Grid Margin="86,0,10,0" Height="86" VerticalAlignment="Top">
+            <Border BorderBrush="#FF838383" BorderThickness="1" Margin="0,10">
+                <Grid Margin="216,-1,0,-1" HorizontalAlignment="Left" Width="218">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding Cita.FechaEntrada, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" FontSize="18" Text="{Binding Cita.Numero, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Margin="10,47,0,0" VerticalAlignment="Top" Text="{Binding Cita.Motivo.Nombre, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Border>
+            <TextBlock HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="199" FontWeight="Bold" FontSize="12" Text="{Binding Cita.Visitante.Nombres, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding Cita.Visitante.Nombres, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Text="{Binding Cita.Visitante.Cedula, ElementName=Item_AtensionCliente_control, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock HorizontalAlignment="Left" Margin="10,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"><Run Language="es-do" Text="--"/></TextBlock>
+        </Grid>
+        <Button HorizontalAlignment="Right" x:FieldModifier="public" x:Name="But_Declinar" Click="But_Declinar_Click"  Margin="0,0,22,20" Width="93" Height="21" VerticalAlignment="Bottom">
+
+            <Grid Width="63">
+                <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
+                    <Image Width="16" Height="16" Margin="5,0,5,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/close_b_24.png"/>
+                    <TextBlock Margin="5,2" Width="45"><InlineUIContainer>
+							<AccessText Text="Declino" Width="47"/>
+						</InlineUIContainer></TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </Button>
+        <Button HorizontalAlignment="Right" x:FieldModifier="public"   x:Name="But_Atender"  Margin="0,19,22,0" Width="93" Height="21" VerticalAlignment="Top" Click="But_Atender_Click">
+            <Grid Width="63" >
+                <StackPanel Orientation="Horizontal" Margin="-10,0,0,0" >
+                    <Image Width="16" Height="16" Margin="5,0,5,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                    <TextBlock Margin="5,2" Width="45"><InlineUIContainer>
+							<AccessText Text="_Atender" Width="47"/>
+						</InlineUIContainer></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Grid x:Name="Estado_Historico" Background="{Binding ElementName=Item_AtensionCliente_control,Path=Cita.ExisteHistorico, Converter={StaticResource ConvertEstadoHistoricoVisitas}}" HorizontalAlignment="Left" Height="50.5" VerticalAlignment="Top" Width="64.5">
+            <!--<Grid.Background>
+        		<LinearGradientBrush EndPoint="0.782,1.123" StartPoint="-0.041,-0.005">
+        			<GradientStop Color="#7F801B1B" Offset="0"/>
+        			<GradientStop Offset="0.645"/>
+        		</LinearGradientBrush>
+        	</Grid.Background>-->
+        </Grid>
+
+    </Grid>
+</UserControl>

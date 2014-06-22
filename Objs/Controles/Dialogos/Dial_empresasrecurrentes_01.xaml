@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controles="clr-namespace:SIC.Objs.Controles" xmlns:Comun="clr-namespace:Empresa.Comun;assembly=Empresa.Comun" x:Class="SIC.Objs.Controles.Dialogos.Dial_empresasrecurrentes_01"
+        Title="Seleccione una Empresa"  Width="524.118" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Height="457.237">
+    <Window.Resources>
+        <Comun:ConvertNegacionBool x:Key="ConvertNegacionBool"/>
+    </Window.Resources>
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/companies_ok_48.png"/>
+        <TextBlock Margin="73,18,21,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="Seleccione Empresa para la Certificación"/></TextBlock>
+        <TextBlock Margin="73,40,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" FontSize="13"><Run Language="es-do" Text="Seleccione una empresa introduzca el Nombre o el Rnc y presione Enter o puede dirigirla A Quien Puede Interesar."/></TextBlock>
+        <Button x:Name="But_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="22,0,0,10" Width="94" Click="But_Aceptar_Click" Height="29" VerticalAlignment="Bottom"/>
+        <Button x:Name="but_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="121,0,0,10" Width="94" Click="but_Cancelar_Click" Height="29" VerticalAlignment="Bottom"/>
+
+        <Grid Margin="23,99,21,47">
+            <Border BorderBrush="#FF8B8B8B" BorderThickness="1"/>
+            <Grid HorizontalAlignment="Left"  Margin="10,30,0,10" Width="452" IsEnabled="{Binding IsChecked, Converter={StaticResource ConvertNegacionBool}, ElementName=ch_quienpueda}">
+                <Border BorderBrush="#FF8B8B8B" BorderThickness="1" >
+                    <Expander Header="Empresas" Margin="7,78,11,7">
+                        <Grid Background="#FFE5E5E5">
+                            <ListBox x:Name="lis_suple" DisplayMemberPath="Nombre" SelectedValuePath="Id" MouseDoubleClick="lis_suple_MouseDoubleClick"/>
+                        </Grid>
+                    </Expander>
+                </Border>
+
+                <TextBlock HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" FontWeight="Bold"><Run Language="es-do" Text="Buscar Empresa, Escriba Nombre o RNC de la empresa y press Enter."/></TextBlock>
+                <TextBlock Margin="10,54,10,0" TextWrapping="Wrap" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Seleccionar Empresas Recurrentes"/></TextBlock>
+            </Grid>
+            <CheckBox x:Name="ch_quienpueda" Click="ch_quienpueda_Click" Content="A Quien Pueda Interesar." HorizontalAlignment="Left" Height="21" Margin="13,4,0,0" VerticalAlignment="Top" Width="449" IsChecked="True"/>
+        </Grid>
+        <Controles:ERSuplidormini Margin="41,151,45,71" IsEnabled="False" x:Name="er_suplidor" SeleccionItem="ERSuplidormini_SeleccionItem"/>
+
+    </Grid>
+</Window>

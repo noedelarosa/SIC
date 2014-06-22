@@ -1,0 +1,99 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Comun="clr-namespace:Empresa.Comun;assembly=Empresa.Comun" mc:Ignorable="d" x:Class="SIC.Objs.Controles.Win_Docente_Detalle"
+    Height="690" Width="650" 
+    Title="Docente Detalle" 
+    ResizeMode="NoResize" 
+    WindowStartupLocation="CenterScreen" 
+    ToolTip="Información General del docente." 
+    x:Name="us_Win_Docente_Detalle"
+     Language="es-DO"
+    >
+    
+    <Window.Resources>
+        <Comun:BoolVisibleConvert x:Key="BoolVisibleConvert"/>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="gridDireccion" Margin="10,10,10,64">
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Información General del Docente" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/mail_down_32.png"/>
+            </Canvas>
+            <Border x:Name="border_Copy"  BorderThickness="1" d:IsLocked="True" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <Grid Margin="10,38,10,0" Height="140" VerticalAlignment="Top">
+
+                <Border HorizontalAlignment="Left" Margin="10,9,0,0" BorderBrush="Black" BorderThickness="1" Width="70" Height="70" VerticalAlignment="Top">
+                    <Image Source="{Binding Docente.AImagen, ElementName=us_Win_Docente_Detalle}" Stretch="Fill" />
+                </Border>
+
+                <TextBlock HorizontalAlignment="Left" Margin="85,9,0,0" TextWrapping="Wrap" Text="{Binding Docente.CedulaF, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top" Width="206" FontWeight="Bold" FontSize="14"/>
+                <TextBlock HorizontalAlignment="Left" Margin="85,30,0,0" TextWrapping="Wrap" Text="{Binding Docente.NombreCompleto, ElementName=us_Win_Docente_Detalle}" Width="206" Height="16" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="85,46,0,0" TextWrapping="Wrap" Text="{Binding Docente.EsMasculinof, ElementName=us_Win_Docente_Detalle}" Width="206" Height="16" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="85,62,0,0" TextWrapping="Wrap" Text="{Binding Docente.EdadPartida_FormatoA, ElementName=us_Win_Docente_Detalle}" Width="206" Height="16" VerticalAlignment="Top"/>
+                <Image x:Name="img_esfallecido" HorizontalAlignment="Left" Height="89" Visibility="{Binding Docente.EsFallecido, Converter={StaticResource BoolVisibleConvert}, ElementName=us_Win_Docente_Detalle}" Margin="482,0,0,0" VerticalAlignment="Top" Width="112" Source="/SIC;component/Objs/Docentes/Reportes/fallecido_girado_opaci60.png"/>
+                <TextBlock HorizontalAlignment="Left" Margin="14,94,0,0" ToolTip="Fecha de Nacimiento" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"><Run Language="es-do" Text="Fecha Nacimient."/></TextBlock>
+                <TextBlock Margin="125,94,355,0" TextWrapping="Wrap" Text="{Binding Docente.FechaNacimiento, ElementName=us_Win_Docente_Detalle, StringFormat=\{0:d\}}" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="14,115,0,0" Visibility="{Binding Docente.EsFallecido, Converter={StaticResource BoolVisibleConvert}, ElementName=us_Win_Docente_Detalle}" ToolTip="Fecha de fallecimiento del docente." TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"><Run Language="es-do" Text="Fech. Fallecimient."/></TextBlock>
+                <TextBlock Margin="125,115,355,0" TextWrapping="Wrap" Visibility="{Binding Docente.EsFallecido, Converter={StaticResource BoolVisibleConvert}, ElementName=us_Win_Docente_Detalle}" Text="{Binding Docente.FechaFallecido, ElementName=us_Win_Docente_Detalle, StringFormat=\{0:d\}}" VerticalAlignment="Top"/>
+            </Grid>
+            <TextBlock Height="19" Margin="10,187,10,0" TextWrapping="Wrap" Text="Información Laboral" VerticalAlignment="Top" Background="#FFD1D1D1"/>
+            <Grid Height="185" Margin="10,205,10,0" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" ToolTip="Ultima dependencia donde estubo el docente." TextWrapping="Wrap" Text="Dependencia" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,29,0,0" ToolTip="Ultima Cargo del docente." TextWrapping="Wrap" Text="Ultimo Cargo" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" ToolTip="Ultima Sueldo del docente, Nomina" TextWrapping="Wrap" Text="Ultimo Sueldo" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock Margin="121,10,18,0" TextWrapping="Wrap" Text="{Binding Docente.Dependencia, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top"/>
+                <TextBlock Margin="121,29,10,0" TextWrapping="Wrap" Text="{Binding Docente.Cargo, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,50,0,0"  TextWrapping="Wrap" Text="{Binding Docente.HistorialPagos.Ultimo.MontoBruto, ElementName=us_Win_Docente_Detalle, StringFormat=\{0:N\}}" VerticalAlignment="Top" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,74,0,0"  ToolTip="Fecha Ingreso Según Ministerio de Educación" TextWrapping="Wrap" Text="Fecha Ingreso" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,74,0,0" TextWrapping="Wrap" Text="{Binding Docente.FechaIngresoEducacion, ElementName=us_Win_Docente_Detalle, StringFormat=\{0:d\}}" VerticalAlignment="Top" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,95,0,0" ToolTip="Tiempo en servicio en función a la fecha de ingreso." TextWrapping="Wrap" Text="Tiemp. Servicio" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,95,0,0" TextWrapping="Wrap" Text="{Binding Docente.TiempoServicioEducacionPartida_FormatoA, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,122,0,0" TextWrapping="Wrap" ToolTip="Número de decreto." Text="Decreto" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,122,0,0" TextWrapping="Wrap" Text="{Binding Docente.DecretoActual.Decreto.Numero, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,141,0,0" TextWrapping="Wrap" ToolTip="Fecha Emisión del decreto." Text="F. Decreto" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,141,0,0" TextWrapping="Wrap" Text="{Binding Docente.DecretoActual.Decreto.FechaEmision, ElementName=us_Win_Docente_Detalle, StringFormat=\{0:d\}}" VerticalAlignment="Top" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,162,0,0" ToolTip="Ultimo estado Laboral." TextWrapping="Wrap" Text="Estado" VerticalAlignment="Top" Width="106" FontWeight="Bold" Background="#FFB4B4B4"/>
+                <TextBlock HorizontalAlignment="Left" Margin="121,162,0,0" TextWrapping="Wrap" Text="{Binding Docente.EstadoLaboral.Nombre, ElementName=us_Win_Docente_Detalle}" VerticalAlignment="Top" Width="191"/>
+            </Grid>
+            <TextBlock Height="19" Margin="10,393,10,0" TextWrapping="Wrap" Text="Decretos Historico" VerticalAlignment="Top" Background="#FFD1D1D1"/>
+
+            <Grid Height="125" Margin="11,372,10,0" VerticalAlignment="Top">
+                <DataGrid ItemsSource="{Binding ElementName=us_Win_Docente_Detalle,Path=Docente.Decretos}" AutoGenerateColumns="False" Margin="0,45,0,-45">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Decreto" Binding="{Binding Decreto.Numero}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Monto" Binding="{Binding Monto, StringFormat=\{0:N\}}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado.Nombre}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <Button HorizontalAlignment="Left"  x:Name="But_Aceptar" x:FieldModifier="public"  Margin="11,0,0,8" Width="102" Height="28" VerticalAlignment="Bottom" Click="But_Aceptar_Click">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Aceptar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Button HorizontalAlignment="Left"  x:Name="But_Imprimir" x:FieldModifier="public"  Margin="118,0,0,8" Width="102" Height="28" VerticalAlignment="Bottom" Click="But_Imprimir_Click">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/UI/printer_32.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Imprimir"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+        </Grid>
+        <TextBlock Margin="10,0,10,17" TextWrapping="Wrap" Height="45" VerticalAlignment="Bottom" FontWeight="Bold" TextAlignment="Justify"><Run Language="es-do" Text="Aviso: La fecha de ingreso es suministrada por el Ministerio de Educación, tal fecha no es CONFIABLE para realizar certificaciones u otro documento legal, para depurar dicha fecha y el tiempo en servicio. por favor buscar soporte en otros medios."/></TextBlock>
+    </Grid>
+</Window>

@@ -1,0 +1,99 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:paginas="clr-namespace:Contrato.objects.paginas" xmlns:local="clr-namespace:SIC.Objs.Controles" x:Name="us_Win_IncluirPersonal" mc:Ignorable="d" x:Class="SIC.Objs.Controles.Win_IncluirPersonal"
+        Title="Incluir Personal NO docente." Height="632.448" Width="737" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid x:Name="gri_general">
+        <Grid x:Name="grid_controles">
+            <Image HorizontalAlignment="Left" Height="50" Margin="10,20,0,0" VerticalAlignment="Top" Width="50" Source="/SIC;component/Objs/Comun/imgs/group_48.png"/>
+
+            <Grid x:Name="grid_info_personal" Margin="10,87,10,0" VerticalAlignment="Top" Height="148">
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="75" Margin="20,48,0,0" VerticalAlignment="Top" Width="75">
+                    <Image Source="{Binding DocenteIncluido.Foto, ElementName=us_Win_IncluirPersonal, UpdateSourceTrigger=PropertyChanged}" Stretch="UniformToFill"/>
+                </Border>
+                <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" d:IsLocked="True">
+                    <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Información Personal" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                    <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/administrator_32.png"/>
+                </Canvas>
+                <Border x:Name="border_Copy"  BorderThickness="1" d:IsLocked="True" >
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#BC726E6E" Offset="1"/>
+                            <GradientStop Color="#30FFFFFF"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="109,48,0,0" TextWrapping="Wrap" Text="{Binding DocenteIncluido.CedulaF, ElementName=us_Win_IncluirPersonal, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="231" FontWeight="Bold" FontSize="14"/>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="109,71,0,0" TextWrapping="Wrap" Text="{Binding DocenteIncluido.NombreCompleto, ElementName=us_Win_IncluirPersonal, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="231"/>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="109,89,0,0" TextWrapping="Wrap" Text="{Binding DocenteIncluido.EsMasculinof, ElementName=us_Win_IncluirPersonal, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="231"/>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="109,104,0,0" TextWrapping="Wrap" Text="{Binding DocenteIncluido.EdadPartida_FormatoA, ElementName=us_Win_IncluirPersonal, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="231"/>
+            </Grid>
+            <TextBlock Margin="75,20,10,0" TextWrapping="Wrap" Text="Asistente para incluir personal no docente." VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#FF000C89"/>
+            <TextBlock Margin="75,49,10,0" TextWrapping="Wrap" Text="Puede incluir personal no procedente del Ministerio de educación." VerticalAlignment="Top"/>
+            <Grid x:Name="grid_inf_laboral" Margin="10,240,10,0" VerticalAlignment="Top" Height="290">
+                <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                    <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Información Laboral" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                    <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/files_32.png"/>
+                </Canvas>
+                <Border x:Name="border_Copy1"  BorderThickness="1" d:IsLocked="True" >
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#BC726E6E" Offset="1"/>
+                            <GradientStop Color="#30FFFFFF"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                </Border>
+                <TextBlock HorizontalAlignment="Left" Margin="26,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="75"><Run Language="es-do" Text="Fecha actual"/></TextBlock>
+                <TextBlock x:Name="Txt_Fecha" HorizontalAlignment="Left" Margin="131,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="160"><Run Language="es-do" Text="01/01/2010"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="26,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="93"><Run Language="es-do" Text="Monto Sueldo"/></TextBlock>
+                <TextBox x:Name="Txt_Monto" HorizontalAlignment="Left" Height="23" Margin="131,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Text="0"/>
+                <TextBlock HorizontalAlignment="Left" Margin="26,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="93"><Run Language="es-do" Text="Tiempo Servicio"/></TextBlock>
+                <TextBox x:Name="Txt_TiempoServicio" HorizontalAlignment="Left" Height="23" Margin="131,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Text="0"/>
+                <TextBlock HorizontalAlignment="Left" Margin="26,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="93"><Run Language="es-do" Text="Lugar Trabajo"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="131,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="392" FontStyle="Italic" FontWeight="Bold" Foreground="#FF807E7E"><Run Language="es-do" Text="Para buscar una empresa escriba su RNC o Nombre y presione Enter"/></TextBlock>
+                <local:ERSuplidormini x:Name="us_er_empresa" Margin="131,145,10,10" SeleccionItem="us_er_empresa_SeleccionItem"/>
+            </Grid>
+            <Button HorizontalAlignment="Left"  x:Name="But_Guardar"   Margin="8,0,0,23" Width="102" Height="28" VerticalAlignment="Bottom" Click="But_Guardar_Click" >
+                <Grid Width="102">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                        <TextBlock Margin="5,5,10,0" Text="Guardar"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Button HorizontalAlignment="Left"  x:Name="But_Salir"  Margin="115,0,0,23" Width="102" Height="28" VerticalAlignment="Bottom" Click="But_Salir_Click" >
+                <Grid Width="102">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top" Text="Salir"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Button  x:Name="But_OtraBusqueda"  Margin="0,0,10,15" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="But_OtraBusqueda_Click" >
+                <Grid Width="102">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,-18,0">
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                        <TextBlock Margin="0,5,10,5" Height="19" VerticalAlignment="Top" Text="Otra Busqueda" Width="84"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+        </Grid>
+        <Grid x:Name="grid_inicial" Background="White" d:IsHidden="True">
+            <Grid HorizontalAlignment="Left" Margin="144,0,0,64" Width="564" Height="50" VerticalAlignment="Bottom">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Aviso:" VerticalAlignment="Top" Foreground="#FFBB0A0A" FontWeight="Bold"/>
+                <TextBlock Margin="46,0,10,0" TextWrapping="Wrap" Text="El siguiente personal que incluira en nuestro sistema, es un personal no docente por consiguiente existen reglas y calculos no aplicable para este personal." VerticalAlignment="Top" Height="40" FontWeight="Bold"/>
+            </Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="342">
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,0,0,5"><Run Text="Introdusca una c"/><Run Text="é"/><Run Text="dula y presion"/><Run Text="e"/><Run Text=" enter o buscar"/></TextBlock>
+                <paginas:ERBuscarPersona x:Name="us_buscarempresa" VerticalAlignment="Center" Margin="0,0,0,5" Limpiando="ERBuscarPersona_Limpiando" SeleccionItem="ERBuscarPersona_SeleccionItem"/>
+                <Button Content="Buscar" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="26" Click="Button_Click"/>
+            </StackPanel>
+            <Grid HorizontalAlignment="Left" Width="126" Background="#FF36363A"/>
+            <Grid Background="#FF36363A" Margin="126,0,23,20" Height="28" VerticalAlignment="Bottom"/>
+            <Grid Height="44" VerticalAlignment="Top" Background="#FF36363A" Margin="126,21,23,0">
+                <TextBlock Margin="10,10,0,0" TextWrapping="Wrap" Text="ASISTENTE PARA BUSCAR PERSONAL" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Width="527" Height="30"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

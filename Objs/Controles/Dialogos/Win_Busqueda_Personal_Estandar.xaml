@@ -1,0 +1,123 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="Win_Busqueda_Personal_Estandar_control"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:paginas="clr-namespace:Contrato.objects.paginas" mc:Ignorable="d" x:Class="SIC.Objs.Controles.Dialogos.Win_Busqueda_Personal_Estandar"
+        Title="Busqueda de Persona" Width="668.121" Height="705.014" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  >
+    <Grid Margin="10">
+        <Grid x:Name="Solicitante" Margin="10,41,10,43">
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                <TextBlock HorizontalAlignment="Left" Text="Persona" VerticalAlignment="Top" Width="79" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/administrator_32.png"/>
+            </Canvas>
+            <Border x:Name="border_Copy4"  BorderThickness="1" d:IsLocked="True" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <Grid Margin="3,40,3,0">
+                <!--<Controles:us_contactos x:Name="usc_contactosolicitante" Margin="10,325,10,0" VerticalAlignment="Top"/>-->
+                <paginas:ERBuscarPersona x:Name="usc_buscarPersona" HorizontalAlignment="Left" Height="23" Margin="96,21,0,0" FinBusqueda="usc_buscarPersona_FinBusqueda"  Limpiando="usc_buscarPersona_Limpiando"  VerticalAlignment="Top" Width="195" SeleccionItem="usc_buscarPersona_SeleccionItem"/>
+                <TextBlock HorizontalAlignment="Left" Height="25" Margin="10,21.47,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="81"/>
+                <Grid HorizontalAlignment="Left" Height="31" Margin="96,149.47,0,0" VerticalAlignment="Top" Width="496">
+                    <Border BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="0" d:IsLocked="True">
+                        <ComboBox DisplayMemberPath="Nombre" SelectedValuePath="Id" SelectedValue="{Binding PersonaRelacion.Parentesco.Id, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PersonaRelacion.Parentesco, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}"  Margin="0,0,257,0" x:Name="com_relacion" />
+                    </Border>
+                    <TextBox x:Name="Txt_RelacionOtros" HorizontalAlignment="Left" Text="{Binding Solicitud.Solicitante.Otros, ElementName=us_mantenimiento_procesos_control, UpdateSourceTrigger=PropertyChanged}" Height="31" Margin="244,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" MaxLength="49" MaxLines="1"/>
+                </Grid>
+                <TextBlock HorizontalAlignment="Left" Height="31" Margin="13,149.47,0,0" TextWrapping="Wrap" Text="Relación" VerticalAlignment="Top" Width="81"/>
+                <StackPanel Margin="5,204,5,10">
+                    <Grid x:Name="Direccion_Solicitante" IsEnabled="False" Margin="0" Height="190">
+                        <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                            <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Dirección" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                            <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/mail_down_32.png"/>
+                        </Canvas>
+                        <Border x:Name="border_Copy7"  BorderThickness="1" >
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#BC726E6E" Offset="1"/>
+                                    <GradientStop Color="#30FFFFFF"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,55,0,0" TextWrapping="Wrap" Text="Provincia:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,55,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.DireccionAsignada.Provincia.Nombre, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="489"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,78,0,0" TextWrapping="Wrap" Text="Municipio:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,78,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.DireccionAsignada.Municipio.Nombre, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="489"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,101,0,0" TextWrapping="Wrap" Text="Sector:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="99,101,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.DireccionAsignada.Sector.Nombre, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="489"/>
+                        <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,138,0,0" TextWrapping="Wrap" Text="Referencias:" VerticalAlignment="Top" Width="84" Background="#FFD6D6D6"/>
+                        <TextBlock HorizontalAlignment="Left" Height="64" Margin="99,138,0,5" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding PersonaRelacion.Persona.DireccionAsignada.Referencia, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" Width="489"/>
+                        <Button x:Name="But_DireccionSolicitante" Content="" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="18" Height="18" ToolTip="Agregar o Editar Dirección " Click="But_DireccionSolicitante_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/pen_16.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                    <Grid x:Name="Contactos_Solicitante" IsEnabled="False" Margin="0,5">
+                        <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474">
+                            <TextBlock HorizontalAlignment="Left" ToolTip="Contactos del docente" Text="Contactos" VerticalAlignment="Top" Width="65" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                            <Image Height="27" ToolTip="Contactos del docente" Canvas.Left="5" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/telephone_32.png"/>
+                        </Canvas>
+                        <Border  BorderThickness="1"  >
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#BC726E6E" Offset="1"/>
+                                    <GradientStop Color="#30FFFFFF"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <Button x:Name="But_ContactoSolicitante" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="18" Height="18" ToolTip="Agregar o Editar Dirección " Margin="10,96,5,10" Click="But_ContactoSolicitante_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/SIC;component/Objs/Comun/imgs/pen_16.png"/>
+                                </Button.Background>
+                            </Button>
+                        </Border>
+
+                        <TextBlock Height="22" Width="61" Text="Telefono" Background="#FFD6D6D6" Margin="10,44.083,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Background="#FFD6D6D6" Height="22" Width="63" Text="Celular" Margin="10,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBlock Height="22" Width="45" Background="#FFD6D6D6" Text="Fax" Margin="240,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Background="#FFD6D6D6" Height="22" Width="44" Text="Email" Margin="242,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBlock Height="22" Width="135" Margin="80,43,0,0" Text="{Binding PersonaRelacion.Persona.Contacto.TelefonoA, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Height="22" Width="135" Margin="80,71,0,0" Text="{Binding PersonaRelacion.Persona.Contacto.MovilA, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBlock Height="22" Width="194" Margin="298,42,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding PersonaRelacion.Persona.Contacto.FaxA, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" />
+                        <TextBlock Height="22" Width="179" Margin="300,71,0,0" Text="{Binding PersonaRelacion.Persona.Contacto.EmailA, ElementName=Win_Busqueda_Personal_Estandar_control,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+                    </Grid>
+                </StackPanel>
+                <Grid Height="91" Margin="96,51,24,0" VerticalAlignment="Top">
+                    <TextBlock HorizontalAlignment="Left" x:Name="Txt_NombreSol" Height="19" Margin="91,5,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.Nombres, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="394" FontWeight="Bold" FontSize="14.667"/>
+                    <Grid HorizontalAlignment="Left" Height="80" Margin="6,5,0,0" VerticalAlignment="Top" Width="80">
+                        <Border BorderBrush="Black" BorderThickness="1" d:IsLocked="True">
+                            <Image Source="{Binding PersonaRelacion.Persona.Foto, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+                    <TextBlock HorizontalAlignment="Left" x:Name="Txt_NombreSol_Copy" Height="19" Margin="91,27,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.Cedulaf, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="394" FontSize="13.333"/>
+                    <TextBlock HorizontalAlignment="Left" x:Name="Txt_NombreSol_Copy1" Height="19" Margin="91,48,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.FechaNacimiento, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="394" FontSize="13.333"/>
+                    <TextBlock HorizontalAlignment="Left" x:Name="Txt_NombreSol_Copy2" Height="19" Margin="91,67,0,0" TextWrapping="Wrap" Text="{Binding PersonaRelacion.Persona.EsMasculinof, ElementName=Win_Busqueda_Personal_Estandar_control, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="394" FontSize="13.333"/>
+                    <Border BorderBrush="#FF979696" BorderThickness="1"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Button HorizontalAlignment="Left" Click="But_Aceptar_Click"  x:Name="But_Aceptar"  Margin="14,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Aceptar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" Click="But_Cerrar_Click"  x:Name="But_Cerrar"  Margin="122,0,0,10" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Cerrar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <TextBlock Margin="14,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-do" Text="Busqueda de Persona"/></TextBlock>
+    </Grid>
+</Window>

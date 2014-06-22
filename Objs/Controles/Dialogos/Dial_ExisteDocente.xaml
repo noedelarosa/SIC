@@ -1,0 +1,14 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_ExisteDocente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="El Docente Seleccionado Existe en presente Decreto, Desea Incluirlo Si/No" Height="193" Width="465" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/switch_off_help_48.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,18,0,0" TextWrapping="Wrap" Text="El Docente Seleccionado Existe en el presente Decreto." VerticalAlignment="Top" Width="359" FontSize="14" FontWeight="Bold"/>
+        <TextBlock Margin="73,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" HorizontalAlignment="Left" Width="359" FontSize="13"><Run Language="es-do" Text="Está Seguro que desea INCLUIR el siguiente docente aunque este presente en el decreto seleccionado?"/></TextBlock>
+        <Button Content="Si" Click="But_Si_Click" HorizontalAlignment="Left" Margin="73,114,0,0" VerticalAlignment="Top" Width="75" x:Name="But_Si"/>
+        <Button Content="No" Click="But_No_Click" HorizontalAlignment="Left" Margin="153,114,0,0" VerticalAlignment="Top" x:Name="But_No" Width="75"/>
+
+
+    </Grid>
+</Window>

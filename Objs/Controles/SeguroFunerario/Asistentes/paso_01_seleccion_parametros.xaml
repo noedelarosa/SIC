@@ -1,0 +1,12 @@
+﻿<Window x:Class="SIC.Objs.Controles.SeguroFunerario.Asistentes.paso_01_seleccion_parametros"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="317" Width="449">
+    <Grid>
+        <GroupBox  Margin="10,43,10,0" VerticalAlignment="Top" Height="74"/>
+        <GroupBox  Margin="10,175,10,0" VerticalAlignment="Top" Height="88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontWeight="Bold"><Run Language="es-do" Text="Parámetros Horizontales(x)"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontWeight="Bold"><Run Language="es-do" Text="Parámetros Verticales(y)"/></TextBlock>
+
+    </Grid>
+</Window>

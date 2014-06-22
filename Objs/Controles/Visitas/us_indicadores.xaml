@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.us_indicadores"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Background="#FFF3F3F3" x:Name="us_indicadores_control"
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             >
+    <Grid>
+
+        <xcdg:DataGridControl x:Name="datagrid12" SelectionUnit="Row" ItemsSource="{Binding}" AutoCreateColumns="False" NavigationBehavior="RowOnly" SelectionMode="Single" Margin="10,208,10,64">
+            
+            <xcdg:DataGridControl.View>
+                <xcdg:TableflowView ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableflowView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow />
+                        </DataTemplate>
+                    </xcdg:TableflowView.Headers>
+
+                    <xcdg:TableflowView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl xcdg:TableView.CanScrollHorizontally="False" NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableflowView.FixedHeaders>
+
+                    <xcdg:TableflowView.Theme>
+                        <xcdg:AeroNormalColorTheme></xcdg:AeroNormalColorTheme>
+                    </xcdg:TableflowView.Theme>
+
+                </xcdg:TableflowView>
+            </xcdg:DataGridControl.View>
+
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="Nombre" Title="Nombre"></xcdg:Column>
+                <xcdg:Column FieldName="Valoracion" Title="Valoración"></xcdg:Column>
+                <xcdg:Column FieldName="Habilitado" Title="Habilitado"></xcdg:Column>
+            </xcdg:DataGridControl.Columns>
+        </xcdg:DataGridControl>
+        
+        <Grid x:Name="Direccion_Solicitante"  Margin="10,19,10,0" Height="130" VerticalAlignment="Top">
+
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" d:IsLocked="True">
+                <TextBlock ToolTip="Información del Indicador" HorizontalAlignment="Left" Text="Información Indicador" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" ToolTip="Dirección" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/mail_down_32.png"/>
+            </Canvas>
+
+            <Border x:Name="border_Copy7"  BorderThickness="1" d:IsLocked="True" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Nombre"/></TextBlock>
+            <TextBox x:Name="Txt_Nombre" Text="{Binding ElementName=us_indicadores_control,Path=Item.Nombre,UpdateSourceTrigger=PropertyChanged}"  Height="23" Margin="77,48,10,0" TextWrapping="Wrap" ToolTip="Nombre del Indicador" VerticalAlignment="Top"/>
+            <TextBox x:Name="Txt_Valoracion" HorizontalAlignment="Left" Text="{Binding ElementName=us_indicadores_control,Path= Item.Valoracion,UpdateSourceTrigger=PropertyChanged}" ToolTip="Valoración puntaje para el indicador"  Height="23" Margin="77,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Valoreación"/></TextBlock>
+            <CheckBox x:Name="ch_habilitado" IsChecked="{Binding ElementName=us_indicadores_control,Path=Item.Habilitado, UpdateSourceTrigger=PropertyChanged}" Content="Habilitado" HorizontalAlignment="Left" Margin="77,104,0,0" VerticalAlignment="Top" Width="122"/>
+            
+        </Grid>
+        <Button HorizontalAlignment="Left" x:Name="But_Refresh" Margin="10,154,0,0" Width="102" Height="28" Click="But_Refresh_Click" VerticalAlignment="Top">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/aadd_32.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Agregar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <TextBlock Margin="10,192,10,0" TextWrapping="Wrap" Text="Indicadores:" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

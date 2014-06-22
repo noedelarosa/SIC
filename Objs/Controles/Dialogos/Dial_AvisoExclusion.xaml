@@ -1,0 +1,14 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_AvisoExclusion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Desea Excluir el Beneficiarios Seleccionado, Si/No" Height="193" Width="465" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/hijack_48.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="El Beneficiario Seleccionado se Excluirá de la lista de Beneficios?"/></TextBlock>
+        <TextBlock Margin="73,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" HorizontalAlignment="Left" Width="359" FontSize="13"><Run Language="es-do" Text="Está Seguro que desea Excluir el Beneficiarios seleccionado de la lista de beneficios(Nomina), Si/No?"/></TextBlock>
+        <Button Content="Si" Click="But_Si_Click" HorizontalAlignment="Left" Margin="73,114,0,0" VerticalAlignment="Top" Width="75" x:Name="But_Si"/>
+        <Button Content="No" Click="But_No_Click" HorizontalAlignment="Left" Margin="153,114,0,0" VerticalAlignment="Top" x:Name="But_No" Width="75"/>
+
+
+    </Grid>
+</Window>

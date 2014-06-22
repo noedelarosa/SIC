@@ -1,0 +1,22 @@
+﻿<Window x:Class="SIC.Objs.Controles.Dialogos.Dial_ReporteDatosFellecidos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Que desea Imprimir del docente?" Height="321.556" Width="458.889" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Image HorizontalAlignment="Left" Height="48" Margin="10,19,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/help_48.png" RenderTransformOrigin="0.539,0.66"/>
+        <TextBlock HorizontalAlignment="Left" Margin="73,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="es-do" Text="Que Desea Imprimir?"/></TextBlock>
+        <TextBlock Height="32" Margin="73,45,10,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-do" Text="Puede Imprimir los datos básicos del docente o incluir los datos de fallecimiento."/></TextBlock>
+        <GroupBox Margin="73,109,10,0" Height="112" Header="Seleccione" VerticalAlignment="Top">
+            <StackPanel Margin="5">
+                <RadioButton Content="Datos Básicos" Checked="RadioButton_Checked" Margin="0,5,0,0" GroupName="Datos" FontWeight="Bold"/>
+                <RadioButton Content="Datos Básicos + Datos de Fallecimiento" Margin="0,5,0,0" GroupName="Datos" Checked="RadioButton_Checked_1" FontWeight="Bold"/>
+                <RadioButton Content="Seguro Funerario" GroupName="Datos" Margin="0,5,0,0" x:Name="ch_Seguro_Funerario" Checked="ch_Seguro_Funerario_Checked" FontWeight="Bold"/>
+                <RadioButton Content="Post-Activo" GroupName="Datos" x:Name="ch_postactivo" Checked="ch_postactivo_Checked" FontWeight="Bold" Margin="0,5,0,0"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Aceptar" Click="But_Si_Click"  HorizontalAlignment="Left" Margin="75,226,0,0" VerticalAlignment="Top" Width="88" x:Name="But_Si" Height="30"/>
+        <Button Content="Cancelar" Click="But_No_Click"  HorizontalAlignment="Left" Margin="168,226,0,0" VerticalAlignment="Top" x:Name="But_No" Width="88" Height="30"/>
+        <CheckBox x:Name="ch_Incluir" Content="Incluir Detalles de Descuento Seguro Funerario" Margin="75,90,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

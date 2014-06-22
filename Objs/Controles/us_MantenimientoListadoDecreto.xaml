@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.us_MantenimientoListadoDecreto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"  x:Name="usercontrol"
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" Loaded="usercontrol_Loaded" >
+    <UserControl.Resources>
+        <xcdg:DataGridCollectionViewSource x:Key="source_data" Source="{Binding}"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Height="77" Margin="10,19,10,0" VerticalAlignment="Top" Background="#FFD8D8D8">
+            <TextBlock HorizontalAlignment="Left" Margin="60,7,-37,0" TextWrapping="Wrap" Text="Listado de Docentes Decreto" VerticalAlignment="Top" Width="257" FontSize="14" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="52" Margin="61,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="505"><Run Language="es-do" Text="Puede buscar docentes por asistente en la parte izquierda y agregarlos al decreto seleccionado, el cual se presente en la parte inferior. Los decreto tienen tres estado(Temporal, Preparado y Aprobado)"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="8,13,0,0" VerticalAlignment="Top" Width="48" Source="decreto_48.png"/>
+        </Grid>
+        <Grid Height="28" Margin="10,173,10,0" VerticalAlignment="Top">
+            <Button HorizontalAlignment="Left" x:Name="But_Agregar" Click="But_Agregar_Click"  Width="102" Height="28" VerticalAlignment="Top">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" Margin="0,0,6,0" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/aadd_32.png"/>
+                        <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Agregar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+            <Button HorizontalAlignment="Left" x:Name="But_Eliminar" Width="102" Height="28" VerticalAlignment="Top" Margin="107,0,0,0">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" Margin="0,0,6,0" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                        <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Eliminar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+        </Grid>
+
+        <Grid Margin="10,237,10,48">
+            <xcdg:DataGridControl x:Name="datagrid1" AutoCreateColumns="False" ItemsSource="{Binding Source={StaticResource source_data}}">
+                <xcdg:DataGridControl.Columns>
+                    <xcdg:Column FieldName="Cedula" Title="Cedula"></xcdg:Column>
+                    <xcdg:Column FieldName="NombreCompleto" Title="Nombres"></xcdg:Column>
+                    <xcdg:Column FieldName="DecretoTransito.Decreto.Numero" Title="Decreto"></xcdg:Column>
+
+                    <xcdg:Column FieldName="DecretoTransito.Monto" Title="Monto Decreto">
+                        <xcdg:Column.CellContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Mode=OneWay, StringFormat=\{0:N\}}"></TextBlock>
+                            </DataTemplate>
+                        </xcdg:Column.CellContentTemplate>
+                    </xcdg:Column>
+
+                    <xcdg:Column FieldName="HistorialPagos.Ultimo.MontoBruto" Title="Monto Nomina">
+                        <xcdg:Column.CellContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Mode=OneWay, StringFormat=\{0:N\}}"></TextBlock>
+                            </DataTemplate>
+                        </xcdg:Column.CellContentTemplate>
+                    </xcdg:Column>
+
+
+
+
+
+                    <xcdg:Column FieldName="EsMasculinof" Title="Sexo"></xcdg:Column>
+                    <xcdg:Column FieldName="EstadoLaboral.Nombre" Title="Estado"></xcdg:Column>
+                </xcdg:DataGridControl.Columns>
+
+                <xcdg:DataGridControl.View>
+                    <xcdg:TableView  ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                        <xcdg:TableView.Headers>
+                            <DataTemplate>
+                                <xcdg:FilterRow />
+                            </DataTemplate>
+                        </xcdg:TableView.Headers>
+
+                        <xcdg:TableView.FixedHeaders>
+                            <DataTemplate>
+                                <xcdg:HierarchicalGroupByControl NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." xcdg:TableView.CanScrollHorizontally="False" />
+                            </DataTemplate>
+                            <DataTemplate>
+                                <xcdg:ColumnManagerRow />
+                            </DataTemplate>
+                        </xcdg:TableView.FixedHeaders>
+
+                        <xcdg:TableView.Theme>
+                            <xcdg:AeroNormalColorTheme/>
+                        </xcdg:TableView.Theme>
+                    </xcdg:TableView>
+                </xcdg:DataGridControl.View>
+            </xcdg:DataGridControl>
+        </Grid>
+
+        <Grid Margin="8,0,10,6" Height="32" VerticalAlignment="Bottom">
+            <Button x:Name="But_Preparado" Height="28" VerticalAlignment="Top" Margin="106,1,0,0" HorizontalAlignment="Left" Width="194">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24"   Source="/SIC;component/Objs/Comun/imgs/aadd_32.png"/>
+                        <TextBlock TextAlignment="Center" Margin="0,4,0,6" Width="152" ><Run Language="es-do" Text="Establecer Preparado"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Grid Height="32" VerticalAlignment="Top" HorizontalAlignment="Right" Width="200" Background="#FFECECEC">
+                <TextBlock HorizontalAlignment="Left" Margin="10,6,0,-11" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="Total Docentes:"/></TextBlock>
+                <TextBlock Text="{Binding Items.Count, ElementName=datagrid1}" HorizontalAlignment="Left" Margin="124,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontSize="14" FontWeight="Bold"><Run Language="es-do" /></TextBlock>
+            </Grid>
+            <Button HorizontalAlignment="Left" x:Name="But_Docente" Click="But_Docente_Click"   Width="101" Height="28" VerticalAlignment="Top" Margin="0,1,0,0">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" Margin="0,0,6,0" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/minister_32.png"/>
+                        <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Docente"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+        </Grid>
+
+        <Grid Height="68" Margin="10,101,10,0" VerticalAlignment="Top" Background="#FFD8D8D8">
+            <TextBlock HorizontalAlignment="Left" Margin="12,5,0,0" TextWrapping="Wrap" Text="Decreto Seleccionado" VerticalAlignment="Top" Width="449" FontWeight="Bold" Foreground="#FF177A07"/>
+            <TextBlock HorizontalAlignment="Left" Margin="25,22,0,0" TextWrapping="Wrap" Text="{Binding Decreto.Numero,ElementName=usercontrol}" VerticalAlignment="Top" Width="102" FontSize="16" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="25,43,0,-17" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" FontSize="16" FontWeight="Bold"><Run Language="es-do" Text="{Binding Decreto.Estado.Nombre,ElementName=usercontrol}"/></TextBlock>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontWeight="Bold" Foreground="#FFEAEAEA"><Run Language="es-do" Text="Listado de Docente agregados al decreto:"/></TextBlock>
+        <Button x:Name="But_Analisis" Click="But_Analisis_Click" Height="28" VerticalAlignment="Top" Margin="0,201,10,0" HorizontalAlignment="Right" Width="106">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" Margin="0,0,6,0" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/american_ok_32.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Analisis"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>

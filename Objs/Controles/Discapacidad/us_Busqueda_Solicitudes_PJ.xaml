@@ -1,0 +1,134 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Comun1="clr-namespace:Empresa.Comun;assembly=Empresa.Comun"
+             xmlns:local="clr-namespace:Empresa.Docente"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" 
+    x:Class="SIC.Objs.Controles.us_Busqueda_Solicitudes_PJ" 
+             mc:Ignorable="d" 
+            >
+    <UserControl.Resources>
+        <local:OrdenGrid_Busqueda_Solicitud_PJ x:Key="cl_comparacion"></local:OrdenGrid_Busqueda_Solicitud_PJ>
+
+        <xcdg:DataGridCollectionViewSource x:Key="sourcedata" AutoCreateItemProperties="False" Source="{Binding}">
+            <xcdg:DataGridCollectionViewSource.ItemProperties>
+
+                <!--<xcdg:Column FieldName="" Title="Cédula"/>
+                <xcdg:Column FieldName="" Title="Nombres"/>
+                <xcdg:Column FieldName="" Title="Apellidos"/>
+                <xcdg:Column FieldName="" Title="Fecha Entrada"/>
+                <xcdg:Column FieldName="" Title="Fecha Concreción"/>
+                <xcdg:Column FieldName="" Title="Escala Pensión"/>
+                <xcdg:Column FieldName="" Title="Estado"/>-->
+
+
+                <xcdg:DataGridItemProperty ValuePath="NoExpediente" Name="NoExpediente" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="Docente.Cedula" Name="Cedula" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="Docente.Nombres" Name="Docente_Nombres" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="Docente.Apellidos" Name="Docente_Apellidos" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="FechaEntrada" Name="FechaEntrada" DataType="{x:Type System:DateTime}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="FechaConcrecion" Name="FechaConcrecion" DataType="{x:Type System:DateTime}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="EscalaPesionDiscapacidad" Name="EscalaPesionDiscapacidad" DataType="{x:Type System:Int32}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="EstadoActual.Estado.Nombre" Name="EstadoActual_Estado_Nombre" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+                <xcdg:DataGridItemProperty ValuePath="PorcientoDiscapacidad" Name="PorcientoDiscapacidad" DataType="{x:Type System:String}"></xcdg:DataGridItemProperty>
+
+            </xcdg:DataGridCollectionViewSource.ItemProperties>
+        </xcdg:DataGridCollectionViewSource>
+
+        <Comun1:Porciento4ColoresConvert x:Key="Porciento4ColoresConvert"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Background="#FFDEDEDE"  VerticalAlignment="Top" Height="179" Margin="10,10,10,0">
+            <TextBlock Margin="67,33,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"><Run Text="Aplique el filtro en funci"/><Run Language="es-do" Text="ó"/><Run Text="n a los parametros seleccionado"/><Run Language="es-do" Text="s"/><Run Text=", puede "/><Run Language="es-do" Text="introducir la cedula o No.Caso o el estado de las solicitudes a buscar."/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1213" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Busqueda de Solicitud Por Discapacidad"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/clients_search_48_02.png"/>
+
+            <Grid Height="85" Margin="67,55,10,0" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="12,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" Text="Estado" ToolTip="Estado de Solicitud Discp."></TextBlock>
+                <ComboBox HorizontalAlignment="Left" DisplayMemberPath="Nombre" SelectedValuePath="Id" Margin="76,56,0,0" VerticalAlignment="Top" x:Name="Com_estado" Width="216"/>
+                <Border BorderBrush="#FF5D5D5D" BorderThickness="1" d:IsLocked="True"/>
+                <TextBlock HorizontalAlignment="Left" Margin="12,38,0,0" TextWrapping="Wrap" Text="No.Caso" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="12,14,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="Txt_nocaso" HorizontalAlignment="Left" Height="23" Margin="76,31,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="195" MaxLength="20"/>
+                <TextBox x:Name="Txt_cedula" HorizontalAlignment="Left" Height="23" Margin="76,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="195" MaxLength="20"/>
+                <Button HorizontalAlignment="Left"  x:Name="But_EstadoLimpiar"  Margin="295,0,0,7" Width="28" Height="22" VerticalAlignment="Bottom"  Click="But_EstadoLimpiar_Click">
+                    <Grid >
+                        <Image  Width="16" Height="16" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                    </Grid>
+                </Button>
+            </Grid>
+
+
+            <Button HorizontalAlignment="Left"  x:Name="But_Buscar" Click="But_Buscar_Click"  Margin="66,0,0,7" Width="102" Height="28" VerticalAlignment="Bottom">
+                <Grid Width="102" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                        <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Buscar"/></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Button>
+        </Grid>
+
+        <xcdg:DataGridControl x:Name="datagrid12" ItemsSource="{Binding Source={StaticResource sourcedata}}"  AutoCreateColumns="False"  Margin="10,194,10,39">
+
+            <xcdg:DataGridControl.View>
+                <xcdg:TableflowView ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableflowView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow CellEditorDisplayConditions="Always" EditTriggers="SingleClick" ApplyFilterDelay="-1" />
+                        </DataTemplate>
+                    </xcdg:TableflowView.Headers>
+
+                    <xcdg:TableflowView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl xcdg:TableView.CanScrollHorizontally="False" NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableflowView.FixedHeaders>
+
+                    <xcdg:TableflowView.Theme>
+                        <xcdg:AeroNormalColorTheme/>
+                    </xcdg:TableflowView.Theme>
+
+                </xcdg:TableflowView>
+            </xcdg:DataGridControl.View>
+
+            <xcdg:DataGridControl.Columns>
+
+                <xcdg:Column FieldName="Cedula" Title="Cédula"/>
+                <xcdg:Column FieldName="Docente_Nombres" Title="Nombres"/>
+                <xcdg:Column FieldName="Docente_Apellidos" Title="Apellidos"/>
+                <xcdg:Column FieldName="NoExpediente" Title="Número" />
+                <xcdg:Column FieldName="FechaEntrada" Title="Fecha Entrada"/>
+                <xcdg:Column FieldName="FechaConcrecion" Title="Fecha Concreción"/>
+                <xcdg:Column FieldName="EscalaPesionDiscapacidad" Title="Escala Pensión"/>
+                <xcdg:Column FieldName="EstadoActual_Estado_Nombre" Title="Estado"/>
+
+                <xcdg:Column FieldName="Tiempos" Title="Tiempos">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <ProgressBar Value="{Binding DiferenciaTiemposPorciento, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Foreground="{Binding DiferenciaTiemposPorciento, Converter={StaticResource Porciento4ColoresConvert}, UpdateSourceTrigger=PropertyChanged,Mode=OneWay}"></ProgressBar>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+                </xcdg:Column>
+
+                <xcdg:Column FieldName="PorcientoDiscapacidad" Title="Porciento Discapacidad"/>
+            </xcdg:DataGridControl.Columns>
+
+        </xcdg:DataGridControl>
+        <Grid Margin="0,0,10,10" Background="#FFF1F1F1" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="257">
+            <Border BorderBrush="#FF999595" BorderThickness="1"></Border>
+            <TextBlock HorizontalAlignment="Left" Margin="5,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Total Items:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="85,5,0,0" TextWrapping="Wrap" Text="{Binding ElementName=datagrid12,Path=Items.Count,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        </Grid>
+
+
+
+
+    </Grid>
+</UserControl>

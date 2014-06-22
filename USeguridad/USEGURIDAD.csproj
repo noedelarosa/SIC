@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD46900F-441C-4F69-956A-15CF7E108B35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Empresa.USeguridad</RootNamespace>
+    <AssemblyName>USeguridad</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\Herramientas\lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="Seguridad">
+      <HintPath>..\Herramientas\lib\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="SSData">
+      <HintPath>..\Herramientas\lib\SSData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Controls.v4.3, Version=4.3.12267.13420, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Herramientas\lib\Xceed.Wpf.Controls.v4.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid.v4.3, Version=4.3.12267.13420, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Herramientas\lib\Xceed.Wpf.DataGrid.v4.3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objectos\Class\Accion.cs" />
+    <Compile Include="Objectos\Class\Autenticar.cs" />
+    <Compile Include="Objectos\Class\Autorizacion.cs" />
+    <Compile Include="Objectos\Class\Grupos.cs" />
+    <Compile Include="Objectos\Class\Permiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objectos\Class\Recurso.cs" />
+    <Compile Include="Objectos\Class\Rol.cs" />
+    <Compile Include="Objectos\Class\Roles.cs" />
+    <Compile Include="Objectos\Class\RScan.cs" />
+    <Compile Include="Objectos\Class\Seccion.cs" />
+    <Compile Include="Objectos\Class\Tipos\TAutorizacion.cs" />
+    <Compile Include="Objectos\Class\Tipos\TBoleto.cs" />
+    <Compile Include="Objectos\Class\Tipos\TGrupo.cs" />
+    <Compile Include="Objectos\Class\Tipos\Miembro.cs" />
+    <Compile Include="Objectos\Class\Tipos\TPermiso.cs" />
+    <Compile Include="Objectos\Class\Tipos\TRecurso.cs" />
+    <Compile Include="Objectos\Class\Tipos\TRol.cs" />
+    <Compile Include="Objectos\Class\Tipos\TRoles.cs" />
+    <Compile Include="Objectos\Class\Tipos\TSeccion.cs" />
+    <Compile Include="Objectos\Class\Tipos\TUsuario.cs" />
+    <Compile Include="Objectos\Class\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SIC\Comun\Comun.csproj">
+      <Project>{3b07107d-5868-4518-8461-7c3b02360885}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

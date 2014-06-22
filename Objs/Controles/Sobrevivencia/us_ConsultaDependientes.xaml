@@ -1,0 +1,122 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Comun="clr-namespace:Empresa.Comun;assembly=Empresa.Comun"
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             xml:lang="es-DO" x:Class="SIC.Objs.Controles.us_ConsultaDependientes" 
+             Unloaded="UserControl_Unloaded" 
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Comun:BooleanSiNoConvert x:Key="BooleanSiNoConvert"/>
+        <Comun:ConvertDataToShortString x:Key="ConvertDataToShortString"/>
+        <Comun:ConvertDataToAnoMes x:Key="ConvertDataToAnoMes"/>
+        <xcdg:DataGridCollectionViewSource x:Key="source" Source="{Binding}"></xcdg:DataGridCollectionViewSource>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid Margin="10,174,10,46">
+            <Border BorderBrush="#FFF0EFEF" BorderThickness="1">
+                <xcdg:DataGridControl  ItemsSource="{Binding Source={StaticResource source}}"  x:Name="datagrid12" AutoCreateColumns="False" NavigationBehavior="RowOnly" SelectionMode="Single">
+                    <xcdg:DataGridControl.View>
+                        <xcdg:TableflowView ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                            <xcdg:TableflowView.Headers>
+                                <DataTemplate>
+                                    <xcdg:FilterRow />
+                                </DataTemplate>
+                            </xcdg:TableflowView.Headers>
+
+                            <xcdg:TableflowView.FixedHeaders>
+                                <DataTemplate>
+                                    <xcdg:HierarchicalGroupByControl xcdg:TableView.CanScrollHorizontally="False" NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." />
+                                </DataTemplate>
+                                <DataTemplate>
+                                    <xcdg:ColumnManagerRow />
+                                </DataTemplate>
+                            </xcdg:TableflowView.FixedHeaders>
+
+                            <xcdg:TableflowView.Theme>
+                                <xcdg:AeroNormalColorTheme></xcdg:AeroNormalColorTheme>
+                            </xcdg:TableflowView.Theme>
+
+                        </xcdg:TableflowView>
+                    </xcdg:DataGridControl.View>
+
+                    <xcdg:DataGridControl.Columns>
+                        <xcdg:Column FieldName="Nombres" Title="Nombres"></xcdg:Column>
+                        <xcdg:Column FieldName="Apellidos" Title="Apellidos"></xcdg:Column>
+                        <xcdg:Column FieldName="FechaNacimiento" Title="Fecha Nacimient."></xcdg:Column>
+
+                        <xcdg:Column FieldName="EdadPartida" Title="Edad">
+                            <xcdg:Column.CellContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource ConvertDataToAnoMes}}"></TextBlock>
+                                </DataTemplate>
+                            </xcdg:Column.CellContentTemplate>
+                        </xcdg:Column>
+
+                        <xcdg:Column FieldName="PresenteDocumentos" Title="Presente Document. Estudio">
+                            <xcdg:Column.CellContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource BooleanSiNoConvert}}"></TextBlock>
+                                </DataTemplate>
+                            </xcdg:Column.CellContentTemplate>
+                        </xcdg:Column>
+
+                        <xcdg:Column FieldName="EsCasado" Title="Es Casado"></xcdg:Column>
+                        <xcdg:Column FieldName="EsMasculinof" Title="Sexo"></xcdg:Column>
+                        <xcdg:Column FieldName="Decreto.Numero" Title="Decreto"></xcdg:Column>
+                        <xcdg:Column FieldName="Aseguradora.Nombre" Title="Aseguradores"></xcdg:Column>
+                    </xcdg:DataGridControl.Columns>
+
+                </xcdg:DataGridControl>
+            </Border>
+        </Grid>
+
+        <Grid Height="159" Margin="10,10,10,0" VerticalAlignment="Top" Background="#FFDEDEDE">
+            <TextBlock HorizontalAlignment="Left" Margin="84,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="586" Height="18" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Busqueda de beneficiarios por Edad Limite"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/clients_search_48_02.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Margin="84,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="697"><Run Language="es-do" Text="Busqueda de beneficiarios por edad limite, puede aplicar los siguiente filtros mostrados debajo."/></TextBlock>
+
+
+            <Grid Height="82" Margin="84,67,10,0" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" Margin="7,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111"><Run Language="es-do" Text="Documento Estudio:"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="7,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"><Run Language="es-do" Text="Edad Cumplida:"/></TextBlock>
+                <CheckBox x:Name="ch_documentospresente" Content="Documentos Presentes" HorizontalAlignment="Left" Margin="139,33,0,0" VerticalAlignment="Top" Width="147" ToolTip="Indica si los beneficiario a buscar poseen documento de estudios presentados al INABIMA(cojete:Si)" PreviewKeyDown="ch_documentospresente_PreviewKeyDown"/>
+                <TextBox x:Name="Txt_FInicio" KeyDown="Txt_FInicio_KeyDown" PreviewTextInput="Txt_FInicio_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="139,52,0,0" TextWrapping="Wrap" Text="17" VerticalAlignment="Top" Width="75" TabIndex="4" ToolTip="Inicio del rango de edad para el filtro a aplicar"/>
+                <TextBlock HorizontalAlignment="Left" Margin="229,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"><Run Language="es-do" Text="Hasta"/></TextBlock>
+                <TextBox x:Name="Txt_FFinal" KeyDown="Txt_FFinal_KeyDown" PreviewTextInput="Txt_FInicio_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="269,52,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top" Width="75" TabIndex="5" ToolTip="final del rango de edad para el filtro a aplicar"/>
+                <ComboBox x:Name="com_parentesco" DisplayMemberPath="Nombre" HorizontalAlignment="Left" Margin="139,6,0,0" VerticalAlignment="Top" Width="205"/>
+                <TextBlock HorizontalAlignment="Left" Margin="7,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"><Run Language="es-do" Text="Parentesco:"/></TextBlock>
+                <Button Content="Aplicar" x:Name="But_Aplicar" Click="But_Aplicar_Click" HorizontalAlignment="Left" Height="21" Margin="351,54,0,0" VerticalAlignment="Top" Width="76"/>
+                <Border BorderBrush="Black" BorderThickness="1" >
+
+                </Border>
+            </Grid>
+        </Grid>
+        <Button Content="Print" HorizontalAlignment="Left" Visibility="Hidden" Margin="234,0,0,13" Width="102" Click="Button_Click" Height="28" VerticalAlignment="Bottom"/>
+        <Button HorizontalAlignment="Left"  x:Name="But_Editar_Copy" Click="But_Editar_Click" Margin="117,0,0,13" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_config_32.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Editar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left"  x:Name="But_Buscar" Click="But_Buscar_Click"  Margin="10,0,0,13" Width="102" Height="28" VerticalAlignment="Bottom">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/administrator_zoom_32.png"/>
+                    <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Buscar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Grid Height="31" Margin="1081,0,10,10" VerticalAlignment="Bottom" Background="#FFC3C3C3">
+            <TextBlock HorizontalAlignment="Left" Margin="5,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"><Run Language="es-do" Text="Total:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="46,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ElementName=datagrid12,Path=Items.Count}" FontSize="14" FontWeight="Bold"><Run Language="es-do" /></TextBlock>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

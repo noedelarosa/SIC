@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SIC.Objs.Controles.Dialogos.item_Visitas_Mostrador"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"  Width="400" x:Name="us_item_Visitas_Mostrador" >
+    <Grid>
+        <Border BorderBrush="#FF939393" BorderThickness="1"></Border>
+        <Grid Margin="10,10,10,0" Height="170" VerticalAlignment="Top">
+            <Border BorderBrush="#FF767676" BorderThickness="1"></Border>
+            <TextBlock  TextWrapping="Wrap" Text="{Binding ElementName=us_item_Visitas_Mostrador,Path=Cita.Numero,UpdateSourceTrigger=PropertyChanged}" FontFamily="Verdana" FontSize="140" FontWeight="Bold" TextAlignment="Center"/>
+        </Grid>
+
+        <Grid Margin="10,180,10,0" Height="86" VerticalAlignment="Top">
+            <TextBlock Margin="5" TextWrapping="Wrap" Text="{Binding ElementName=us_item_Visitas_Mostrador,Path=Cita.Personal.Departamento.Abreviatura,UpdateSourceTrigger=PropertyChanged}" FontSize="50" FontFamily="Verdana" TextAlignment="Center" Background="Black" Foreground="White"></TextBlock>
+        </Grid>
+        <Grid Margin="5,266,5,5" Background="White">
+            <Label Content="PENSION" Margin="5" FontSize="40"/>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

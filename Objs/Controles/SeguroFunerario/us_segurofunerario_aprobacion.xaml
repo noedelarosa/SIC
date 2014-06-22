@@ -1,0 +1,92 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" 
+             x:Class="SIC.Objs.Controles.SeguroFunerario.us_segurofunerario_aprobacion" 
+             mc:Ignorable="d">
+    
+    <UserControl.Resources>
+        <xcdg:DataGridCollectionViewSource x:Key="source_data" Source="{Binding}"/>
+    </UserControl.Resources>
+    <Grid >
+
+        <Grid Background="#FFDEDEDE" Margin="10,10,10,0" Height="66" VerticalAlignment="Top">
+            <TextBlock Margin="81,33,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23"><Run Text="Aplique el filtro en funci"/><Run Language="es-do" Text="ó"/><Run Text="n a los parametros seleccionado"/><Run Language="es-do"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="454" FontWeight="Bold" FontSize="14"><Run Language="es-do" Text="Aprobaciones de Solicitud Seguro Funerario"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="/SIC;component/Objs/Comun/imgs/clients_search_48.png"/>
+        </Grid>
+
+        <xcdg:DataGridControl  ItemsSourceName="Solicitud(es)" x:Name="datagrid1" AutoCreateColumns="False" HorizontalAlignment="Stretch" ItemsSource="{Binding Source={StaticResource source_data}}" SelectionMode="Single" Margin="10,114,10,0" NavigationBehavior="RowOnly" ItemScrollingBehavior="Immediate"  VerticalAlignment="Top">
+
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="EsPago">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Mode=TwoWay}"></CheckBox>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+
+                </xcdg:Column>
+
+                <xcdg:Column FieldName="Numero" Title="Numero"/>
+                <xcdg:Column FieldName="FechaEntrada" Title="Fecha Entrada"/>
+                <xcdg:Column FieldName="EstadoActual.Estado.Nombre" Title="Estado"/>
+                <xcdg:Column FieldName="Porciento" Title="Porciento"/>
+
+                <xcdg:Column FieldName="Docente.Cedula" Title="Cedula Docente"/>
+                <xcdg:Column FieldName="Docente.Nombres" Title="Nombres Docente"/>
+                <xcdg:Column FieldName="Docente.Apellidos" Title="Apellidos Docente"/>
+
+                <xcdg:Column FieldName="Solicitante.Cedula" Title="Cedula Solicitante"/>
+                <xcdg:Column FieldName="Solicitante.Nombres" Title="Nombres Solicitante"/>
+                <xcdg:Column FieldName="Solicitante.Apellidos" Title="Apellidos Solicitante"/>
+
+                <xcdg:Column FieldName="Solicitante.Parentesco.Nombre" Title="Parentesco"/>
+
+            </xcdg:DataGridControl.Columns>
+            <xcdg:DataGridControl.View>
+                <xcdg:TableView  ColumnStretchMode="Last" UseDefaultHeadersFooters="False">
+                    <xcdg:TableView.Headers>
+                        <DataTemplate>
+                            <xcdg:FilterRow />
+                        </DataTemplate>
+                    </xcdg:TableView.Headers>
+
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:HierarchicalGroupByControl NoGroupContent="Arrastre la(s) columna(s) que desea agrupar aquí." xcdg:TableView.CanScrollHorizontally="False" />
+                        </DataTemplate>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+
+                    <xcdg:TableView.Theme>
+                        <xcdg:AeroNormalColorTheme/>
+                    </xcdg:TableView.Theme>
+                </xcdg:TableView>
+            </xcdg:DataGridControl.View>
+        </xcdg:DataGridControl>
+
+        <Button HorizontalAlignment="Left" x:Name="But_Abrir"  Margin="10,198,5,5" Width="102" Height="28" VerticalAlignment="Top">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/files_32.png"/>
+                    <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Abrir"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left" x:Name="But_recarga"  Margin="10,81,0,0" Width="102" Height="28" VerticalAlignment="Top">
+            <Grid Width="102" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/refresh_32.png"/>
+                    <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Re-Carga"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+    </Grid>
+</UserControl>

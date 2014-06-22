@@ -1,0 +1,44 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	
+    
+    
+	mc:Ignorable="d"
+	x:Class="SIC.ItemNomina"
+	x:Name="UserControl" Height="142.5" Width="200.5" 
+    xmlns:Comun="clr-namespace:Empresa.Comun;assembly=Empresa.Comun"
+    
+    >
+
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid Background="Black">
+            <Grid Height="21.5" VerticalAlignment="Top" Background="#FF303030" Margin="0">
+                <TextBlock Margin="5,0,0,0" TextWrapping="Wrap" Text="{Binding Nomina.Fecha, ElementName=UserControl}" FontWeight="Bold" Foreground="White" FontSize="16" Height="21" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Margin="5,26.5,5,5">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#00363535"/>
+                        <GradientStop Color="#19FFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="2,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Foreground="White" FontSize="10.667"><Run Language="es-do" Text="Total Cantidad Personal:"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="2,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Foreground="White" FontSize="10.667"><Run Language="es-do" Text="Sueldo Promedio"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="18" Margin="2,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Foreground="White" FontSize="10.667"><Run Language="es-do" Text="Total Sueldos"/></TextBlock>
+                <TextBlock Height="18" Margin="92,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="10.667" Text="{Binding Nomina.ConteoDocentes, ElementName=UserControl}"/>
+                <TextBlock Height="18" Margin="92,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="10.667" Text="{Binding Nomina.Promedio, ElementName=UserControl}"/>
+                <TextBlock Height="18" Text="{Binding Nomina.TotalSueldos, ElementName=UserControl}" Margin="92,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontSize="10.667" />
+                <Button Content="Agre" HorizontalAlignment="Left" Height="18.5" Margin="2,88,0,0" VerticalAlignment="Top" Width="47"/>
+                <Button Content="Print" HorizontalAlignment="Left" Height="18.5" Margin="54,88,0,0" VerticalAlignment="Top" Width="47"/>
+            </Grid>
+            <Border BorderBrush="#FF3C3C3C" BorderThickness="1" d:IsLocked="True"/>
+        </Grid>
+    </Grid>
+</UserControl>

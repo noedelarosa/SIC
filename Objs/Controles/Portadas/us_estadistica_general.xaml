@@ -1,0 +1,44 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="SIC.Objs.Controles.Portadas.us_estadistica_general" 
+             mc:Ignorable="d" 
+             Height="407" Width="552">
+    <Grid Background="#FFFBFBFB">
+        
+        <dxc:ChartControl x:Name="ch_estadistica" Margin="10,11,10,61" >
+       
+            <!--<dxc:ChartControl.Legend>
+                <dxc:Legend/>
+            </dxc:ChartControl.Legend>
+            
+            <dxc:XYDiagram2D>
+                
+                <dxc:XYDiagram2D.AxisX>
+                    <dxc:AxisX2D>
+                        <dxc:AxisX2D.Label>
+                            <dxc:AxisLabel Angle="-45"/>
+                        </dxc:AxisX2D.Label>
+                    </dxc:AxisX2D>
+                </dxc:XYDiagram2D.AxisX>
+                
+                <dxc:BarStackedSeries2D DisplayName="Series 1" LabelsVisibility="True">
+                    <dxc:BarStackedSeries2D.Label>
+                        <dxc:SeriesLabel/>
+                    </dxc:BarStackedSeries2D.Label>
+                    <dxc:BarStackedSeries2D.Model>
+                        <dxc:SimpleBar2DModel/>
+                    </dxc:BarStackedSeries2D.Model>
+                    
+                    <dxc:SeriesPoint Argument="NO" Value="10"/>
+                    <dxc:SeriesPoint Argument="NO" Value="20"/>
+                    <dxc:SeriesPoint Argument="SI" Value="5"/>
+                </dxc:BarStackedSeries2D>
+            </dxc:XYDiagram2D>-->
+        </dxc:ChartControl>
+        
+        <Grid HorizontalAlignment="Left" Margin="10,0,0,10" Width="532" Height="47" VerticalAlignment="Bottom" Background="#FF898989"/>
+    </Grid>
+</UserControl>

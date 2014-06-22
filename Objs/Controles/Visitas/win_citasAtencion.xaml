@@ -1,0 +1,98 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        Closed="win_citasatencioncontrol_Closed" 
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+        x:Class="SIC.Objs.Controles.win_citasAtencion"
+        Title="Atensión al cliente(docente)"
+        Height="700"
+        Width="824"
+       
+        WindowStartupLocation="CenterScreen"
+        x:Name="win_citasatencioncontrol"
+    xmlns:local="clr-namespace:SIC.Objs.Controles" 
+    >
+    <Grid>
+
+        <Grid x:Name="gridDocente" Margin="10,10,10,0" VerticalAlignment="Top" Height="118">
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" >
+                <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Cliente(Docente)" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/administrator_32.png"/>
+            </Canvas>
+            <Border x:Name="border_Copy"  BorderThickness="1" d:IsLocked="True" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="74,44,0,0" TextWrapping="Wrap" Text="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Visitante.Nombres,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="342"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="74,67,0,0" TextWrapping="Wrap" Text="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Visitante.Cedula,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="342"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="74,90,0,0" TextWrapping="Wrap" Text="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Visitante.Estado.Nombre,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="342"/>
+            <Grid HorizontalAlignment="Left" Height="60" Margin="9,44,0,0" VerticalAlignment="Top" Width="60">
+                <Image Source="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Visitante.AImagen,UpdateSourceTrigger=PropertyChanged}"  />
+            </Grid>
+        </Grid>
+        <Grid x:Name="gridDireccion_Copy" Margin="10,133,10,87" >
+            <Canvas Height="32.666" VerticalAlignment="Top" Background="#74747474" >
+                <TextBlock ToolTip="Dirección del docente" HorizontalAlignment="Left" Text="Información Cita" VerticalAlignment="Top" Width="197.003" Canvas.Left="35" Canvas.Top="8.464" Foreground="Black" FontWeight="Bold"/>
+                <Image Height="27" Canvas.Left="5" ToolTip="Dirección del docente" Canvas.Top="3.464" Width="27" Source="/SIC;component/Objs/Comun/imgs/pen_16.png"/>
+            </Canvas>
+            <Border x:Name="border_Copy1"  BorderThickness="1" d:IsLocked="True">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BC726E6E" Offset="1"/>
+                        <GradientStop Color="#30FFFFFF"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Background="#FFD6D6D6"><Run Language="es-do" Text="Nota"/></TextBlock>
+            <TextBox HorizontalAlignment="Left" Height="100" Margin="67,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="378" Text="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Referencia,UpdateSourceTrigger=PropertyChanged}" VerticalScrollBarVisibility="Visible"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Background="#FFD6D6D6"><Run Language="es-do" Text="Número"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="67,61,0,0" TextWrapping="Wrap" Text="{Binding Cita.Numero, ElementName=win_citasatencioncontrol, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="170" FontWeight="Bold" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Background="#FFD6D6D6" Text="Entrada"></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="67,84,0,0" TextWrapping="Wrap" Text="{Binding Cita.FechaEntrada, ElementName=win_citasatencioncontrol, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="170" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Background="#FFD6D6D6" Text="Motivo"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="67,107,0,0" TextWrapping="Wrap" Text="{Binding Cita.Motivo.Nombre, ElementName=win_citasatencioncontrol, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="378" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" x:Name="txt_tiempoespero" Height="18" Margin="67,38,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="170" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="18" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Background="#FFD6D6D6"><Run Language="es-do" Text="Esperó"/></TextBlock>
+
+            <local:ReitingControl Margin="10,248,10,10" Valoraciones="{Binding ElementName=win_citasatencioncontrol,Path=Cita.Valoracion, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <TextBlock x:Name="Txt_Segundos" ToolTip="Tiempo Transcurrido Desde la Entrada." HorizontalAlignment="Right" Text="00:00:00" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" TextAlignment="Right" FontSize="16" Margin="0,4,10,0"/>
+        </Grid>
+
+        <Button HorizontalAlignment="Left"  x:Name="But_Finalizar" Click="But_Finalizar_Click"  Margin="10,0,0,54" Width="102" Height="28" VerticalAlignment="Bottom" >
+            <Grid Width="102">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ok_24.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Finalizar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+        <Button HorizontalAlignment="Left"  x:Name="But_Cancelar" Click="But_Cancelar_Click"  Margin="117,0,0,54" Width="102" Height="28" VerticalAlignment="Bottom" >
+            <Grid Width="102">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/ddelete_32.png"/>
+                    <TextBlock Margin="5,5,10,0" Height="19" VerticalAlignment="Top"><Run Language="es-do" Text="Cancelar"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <Grid Margin="10,0,10,10" Height="22" VerticalAlignment="Bottom">
+            <ProgressBar x:Name="progreso1" ToolTip="Tiempo(Minitos) Estimado para Atender el Cliente(Docente)" />
+            <TextBlock TextAlignment="Center"  ToolTip="Tiempo(Minitos) Estimado para Atender el Cliente(Docente)" FontWeight="Bold" FontSize="14" Text="{Binding ElementName=win_citasatencioncontrol, Path=Cita.Motivo.Tiempo,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        </Grid>
+        <Button  x:Name="But_Estado"  Margin="0,0,10,54" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="102" >
+            <Grid Width="102">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Height="24" Margin="5,0,2,0" HorizontalAlignment="Left" Source="/SIC;component/Objs/Comun/imgs/payment_help_48.png"/>
+                    <TextBlock Margin="5,5,10,0"><Run Language="es-do" Text="Estado"/></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+    </Grid>
+</Window>
