@@ -22,15 +22,13 @@ namespace SIC
                 GlobalItems.IDProcesor = Empresa.Comun.Servicios.DameIdProcesador();
                 //Inicializando cultura por defecto.
                 System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-DO");
-                if (!System.IO.Directory.Exists(GlobalItems.____cd_tempdirectorio)) System.IO.Directory.CreateDirectory(GlobalItems.____cd_tempdirectorio);
+                if(!System.IO.Directory.Exists(GlobalItems.____cd_tempdirectorio)) System.IO.Directory.CreateDirectory(GlobalItems.____cd_tempdirectorio);
 
                 Empresa.Comun.Unidad_LLaves un = new Empresa.Comun.Unidad_LLaves();
                 un.GetUniqueId();
-
-
-
             }
-            catch {
+            catch 
+            {
                     MessageBox.Show("Aviso la aplicación no puede ejecutarse.", "Programa no se puede Ejecutar", MessageBoxButton.OK, MessageBoxImage.Warning);
                     Application.Current.Shutdown(); 
             }

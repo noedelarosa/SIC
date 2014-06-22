@@ -69,3 +69,14 @@ D:\Repositorio\SIC\Rhh\bin\Debug\WPFToolkit.pdb
 D:\Repositorio\SIC\Rhh\obj\Debug\Rhh.csprojResolveAssemblyReference.cache
 D:\Repositorio\SIC\Rhh\obj\Debug\Empresa.RHH.dll
 D:\Repositorio\SIC\Rhh\obj\Debug\Empresa.RHH.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\Empresa.RHH.dll
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\Empresa.RHH.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\Empresa.Comun.dll
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\WPFToolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\Empresa.Comun.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\bin\Debug\WPFToolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\obj\Debug\Rhh.csprojResolveAssemblyReference.cache
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\obj\Debug\Empresa.RHH.dll
+C:\Users\Noe\Documents\GitHub\SIC\Rhh\obj\Debug\Empresa.RHH.pdb

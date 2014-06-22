@@ -49,3 +49,17 @@ D:\Convert\INABIMA\SIC\Comun\obj\Debug\Empresa.Comun.g.resources
 D:\Convert\INABIMA\SIC\Comun\obj\Debug\Empresa.Comun.dll.licenses
 D:\Convert\INABIMA\SIC\Comun\obj\Debug\Empresa.Comun.dll
 D:\Convert\INABIMA\SIC\Comun\obj\Debug\Empresa.Comun.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\Empresa.Comun.dll
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\Empresa.Comun.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\WPFToolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Comun\bin\Debug\WPFToolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Controls\DateTimePlus.baml
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Controls\DateTimePlus.g.cs
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Empresa.Comun_MarkupCompile.cache
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Empresa.Comun.g.resources
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Empresa.Comun.dll.licenses
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Empresa.Comun.dll
+C:\Users\Noe\Documents\GitHub\SIC\Comun\obj\Debug\Empresa.Comun.pdb

@@ -45,3 +45,15 @@ D:\Convert\INABIMA\M-TAF\USeguridad\bin\Debug\WPFToolkit.pdb
 D:\Convert\INABIMA\M-TAF\USeguridad\obj\Debug\USEGURIDAD.csprojResolveAssemblyReference.cache
 D:\Convert\INABIMA\M-TAF\USeguridad\obj\Debug\USeguridad.dll
 D:\Convert\INABIMA\M-TAF\USeguridad\obj\Debug\USeguridad.pdb
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\USeguridad.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\USeguridad.pdb
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\Empresa.Comun.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\ConectionString.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\WPFToolkit.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\Empresa.Comun.pdb
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\bin\Debug\WPFToolkit.pdb
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\obj\Debug\USEGURIDAD.csprojResolveAssemblyReference.cache
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\obj\Debug\USeguridad.dll
+C:\Users\Noe\Documents\GitHub\SIC\USeguridad\obj\Debug\USeguridad.pdb

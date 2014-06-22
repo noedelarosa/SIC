@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SIC.exe.manifest" size="122874">
+    <dependentAssembly dependencyType="install" codebase="SIC.exe.manifest" size="122955">
       <assemblyIdentity name="SIC.exe" version="1.0.0.190" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>tp/E9wc7O2TqIypqg+dHH/dd9aA=</dsig:DigestValue>
+        <dsig:DigestValue>71Dh4QxrNkU54uAUVzFe7RlU7uc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
